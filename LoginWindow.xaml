@@ -1,0 +1,152 @@
+﻿<Window x:Class="MotoRandApplication.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MotoRandApplication"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800">
+    <Grid>
+
+        <Rectangle
+            Fill="#FF3F3D3B"
+            HorizontalAlignment="Left"
+            Height="944"
+            Margin="125,-439,0,-84.345"
+            VerticalAlignment="Top"
+            Width="386"
+            RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="62.174"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+
+        <!-- MotorCycle -->
+        <Image
+            Margin="359,179,7.309,-2.345"
+            Source="/res/images/harleyDavidson.png"
+            Stretch="Fill"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <!-- Окно авторизации -->
+        <Border
+            HorizontalAlignment="left"
+            VerticalAlignment="Center"
+            Height="285"
+            Margin="50,0,0.0,0"
+            Width="280"
+            Background="White"
+            CornerRadius="40">
+            
+            <StackPanel>
+                <Label
+                    FontFamily="Tw Cen MT Condensed Extra Bold"
+                    FontSize="36"
+                    HorizontalAlignment="Center"
+                    Content="MotoRand"
+                    Background="Transparent"
+                    Foreground="#FF3F3D3B">
+                </Label>
+
+                <TextBox
+                    x:Name="fieldLogin"
+                    Margin="20,20,20,20"
+                    Height="45"
+                    FontSize="15px"
+                    Padding="20,10,20,10"
+                    TextAlignment="Left"
+                    MaxLength="20"
+                    BorderBrush="Black"
+                    PreviewTextInput="loginField_PreviewTextInput">
+                    <TextBox.Effect>
+                        <DropShadowEffect
+                            ShadowDepth="4"
+                            Color="DimGray"
+                            Opacity="0.2">
+                        </DropShadowEffect>  
+                    </TextBox.Effect>
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter
+                                Property="CornerRadius"
+                                Value="10" />
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+
+                <TextBox
+                    x:Name="fieldPassword"
+                    Margin="20,10,20,10"
+                    Height="45"
+                    FontSize="15px"
+                    Padding="20,10,20,10"
+                    MaxLength="20"
+                    BorderBrush="Black"
+                    Background="White">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius"
+                                    Value="10" />
+                        </Style>
+                    </TextBox.Resources>
+                    <TextBox.Effect>
+                        <DropShadowEffect
+                            ShadowDepth="4"
+                            Color="DimGray"
+                            Opacity="0.2">
+                        </DropShadowEffect>
+                    </TextBox.Effect>
+                </TextBox>
+
+                <Button
+                    Content="ВОЙТИ"
+                    FontFamily="Tw Cen MT Condensed Extra Bold"
+                    Background="#FFDC8A38"
+                    VerticalAlignment="Bottom"
+                    Height="40"
+                    Margin="50,20,50,60"
+                    FontSize="14"
+                    Foreground="#FF3F3D3B"
+                    Cursor="Hand"
+                    Click="Button_Click">
+                    <Button.Effect>
+                        <DropShadowEffect
+                            Color="DimGray"
+                            ShadowDepth="6"
+                            Opacity="0.2"/>
+                    </Button.Effect>
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+            
+            <Border.Effect>
+                <DropShadowEffect
+                ShadowDepth="6"
+                Color="DimGray"
+                Opacity="0.4"/>
+            </Border.Effect>
+            
+        </Border>
+
+    </Grid>
+</Window>

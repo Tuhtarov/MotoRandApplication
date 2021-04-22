@@ -1,0 +1,17 @@
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\bin\Debug\MotoRandApplication.exe.config
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\bin\Debug\MotoRandApplication.exe
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\bin\Debug\MotoRandApplication.pdb
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication.csprojAssemblyReference.cache
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\LoginWindow.g.cs
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MainWindow.g.cs
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\App.g.cs
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication_MarkupCompile.cache
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication_MarkupCompile.lref
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\LoginWindow.baml
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MainWindow.baml
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication.g.resources
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication.Properties.Resources.resources
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication.csproj.GenerateResource.cache
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication.csproj.CoreCompileInputs.cache
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication.exe
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication.pdb
