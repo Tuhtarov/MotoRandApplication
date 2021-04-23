@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bf7e0cb3dbd94b849e169fd0fef97929" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="MotoRandModel.Abakan_Street" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.CashBox" Width="1.5" PointX="3" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.City" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.CountryMoto" Width="1.5" PointX="1.5" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.Customer" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.Employee" Width="1.5" PointX="5.25" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.Motorcycle" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.Order" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.Orders" Width="1.5" PointX="7.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.Part" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.PhoneBook" Width="1.5" PointX="3" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.Products" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.Provider" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.Store" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.TypeComponent" Width="1.5" PointX="0.75" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandModel.TypePart" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />
+        <AssociationConnector Association="MotoRandModel.FK_Employee_Abakan_Street" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_CashBox_TypeComponent" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Employee_CashBox" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Customer_City" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Provider_City" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Motorcycle_CountryMoto" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Order_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Orders_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Employee_PhoneBook" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Orders_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Part_Motorcycle" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Order_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Orders_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Products_Part" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Products_Provider" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Products_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_Products_TypePart" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandModel.FK_TypeComponent_TypePart" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

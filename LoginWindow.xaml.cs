@@ -11,14 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+//здесь подключения для работы с БД
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace MotoRandApplication
 {
-    /// <summary>
     /// Логика взаимодействия для LoginWindow.xaml
-    /// </summary>
     public partial class LoginWindow : Window
     {
+        SqlConnection sqlConnection = null;
 
         public LoginWindow()
         {
@@ -33,7 +36,7 @@ namespace MotoRandApplication
             }
             else
             {
-                MessageBox.Show("Заполните все поля!", "Ввод");
+                MessageBox.Show("Заполните все поля!", "Ошибка ввода");
             }
         }
 
@@ -42,6 +45,20 @@ namespace MotoRandApplication
             if (!CheckValidField.IsUserInputCorrect(e.Text))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void LoadLoginWindow(object sender, RoutedEventArgs e)
+        {
+            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoRandConnect"].ConnectionString);
+            sqlConnection.Open();
+            if(sqlConnection.State == ConnectionState.Open)
+            {
+                textStateDB.Content = "Подключение к БД: установлено.";
+            }
+            else
+            {
+                textStateDB.Content = "Подключение к БД: не установлено.";
             }
         }
     }

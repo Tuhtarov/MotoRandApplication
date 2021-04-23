@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MotoRandApplication"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
+        Title="Авторизация"
+        Height="450"
+        Width="800"
+        Loaded="LoadLoginWindow" Icon="res/images/inDoorIcon.jpg">
     <Grid>
 
         <Rectangle
@@ -53,7 +56,6 @@
             Width="280"
             Background="White"
             CornerRadius="40">
-            
             <StackPanel>
                 <Label
                     FontFamily="Tw Cen MT Condensed Extra Bold"
@@ -64,9 +66,14 @@
                     Foreground="#FF3F3D3B">
                 </Label>
 
+                <Label
+                    x:Name="textStateDB"
+                    HorizontalAlignment="Center"
+                    Content="Подключение к БД:" FontFamily="Arial" Background="White" Foreground="#FFC18446"/>
+
                 <TextBox
                     x:Name="fieldLogin"
-                    Margin="20,20,20,20"
+                    Margin="20,10,20,10"
                     Height="45"
                     FontSize="15px"
                     Padding="20,10,20,10"
@@ -120,7 +127,7 @@
                     Background="#FFDC8A38"
                     VerticalAlignment="Bottom"
                     Height="40"
-                    Margin="50,20,50,60"
+                    Margin="50,10,50,60"
                     FontSize="14"
                     Foreground="#FF3F3D3B"
                     Cursor="Hand"

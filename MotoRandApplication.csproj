@@ -35,8 +35,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,6 +77,72 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="database\Abakan_Street.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\CashBox.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\City.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\CountryMoto.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\Customer.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\Employee.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\MotoRand.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MotoRand.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\MotoRand.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\MotoRand.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MotoRand.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="database\Motorcycle.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\Order.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\Orders.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\Part.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\PhoneBook.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\Products.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\Provider.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\Store.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\sysdiagrams.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\TypeComponent.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\TypePart.cs">
+      <DependentUpon>MotoRand.tt</DependentUpon>
+    </Compile>
     <Compile Include="packages\uimanagement\CheckValidField.cs" />
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
@@ -94,6 +170,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="database\MotoRand.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MotoRand.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="database\MotoRand.edmx.diagram">
+      <DependentUpon>MotoRand.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -106,7 +190,21 @@
     <Resource Include="res\images\harleyDavidson.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="windows\" />
+    <Content Include="database\MotoRand.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MotoRand.Context.cs</LastGenOutput>
+      <DependentUpon>MotoRand.edmx</DependentUpon>
+    </Content>
+    <Content Include="database\MotoRand.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MotoRand.edmx</DependentUpon>
+      <LastGenOutput>MotoRand.cs</LastGenOutput>
+    </Content>
+    <Resource Include="res\images\inDoorIcon.jpg" />
+    <Resource Include="res\images\LoginWindowIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

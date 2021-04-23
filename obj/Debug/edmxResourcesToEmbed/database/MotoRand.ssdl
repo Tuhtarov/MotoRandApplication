@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище MotoRandModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Abakan_Street">
+    <Key>
+      <PropertyRef Name="idStreet" />
+    </Key>
+    <Property Name="idStreet" Type="int" Nullable="false" />
+    <Property Name="NameStreet" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Home" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CashBox">
+    <Key>
+      <PropertyRef Name="idCashBox" />
+    </Key>
+    <Property Name="idCashBox" Type="int" Nullable="false" />
+    <Property Name="CashBoxName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idTypeComponent" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="idCity" />
+    </Key>
+    <Property Name="idCity" Type="int" Nullable="false" />
+    <Property Name="IndexPost" Type="decimal" Precision="6" Scale="0" Nullable="false" />
+    <Property Name="NameCity" Type="nchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CountryMoto">
+    <Key>
+      <PropertyRef Name="idCountryMoto" />
+    </Key>
+    <Property Name="idCountryMoto" Type="int" Nullable="false" />
+    <Property Name="CountryMoto" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="idCustomer" />
+    </Key>
+    <Property Name="idCustomer" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="25" Nullable="false" />
+    <Property Name="Surname" Type="nchar" MaxLength="25" Nullable="false" />
+    <Property Name="BirthDay" Type="date" Nullable="false" />
+    <Property Name="Tellphone" Type="decimal" Precision="11" Scale="0" Nullable="false" />
+    <Property Name="idCity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="idEmployee" />
+    </Key>
+    <Property Name="idEmployee" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Surname" Type="nchar" MaxLength="25" Nullable="false" />
+    <Property Name="BirthDay" Type="date" Nullable="false" />
+    <Property Name="idCashBox" Type="int" Nullable="false" />
+    <Property Name="idTellPhone" Type="int" Nullable="false" />
+    <Property Name="idStreet" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Motorcycle">
+    <Key>
+      <PropertyRef Name="idMoto" />
+    </Key>
+    <Property Name="idMoto" Type="int" Nullable="false" />
+    <Property Name="Brand" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Model" Type="nchar" MaxLength="60" Nullable="false" />
+    <Property Name="idCountryMoto" Type="int" Nullable="false" />
+    <Property Name="Year" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="idOrder" />
+    </Key>
+    <Property Name="idOrder" Type="int" Nullable="false" />
+    <Property Name="idCustomer" Type="int" Nullable="false" />
+    <Property Name="Qty" Type="smallint" Nullable="false" />
+    <Property Name="Value" Type="money" Nullable="false" />
+    <Property Name="idProduct" Type="int" Nullable="false" />
+    <Property Name="idTypeComponent" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="idOrders" />
+    </Key>
+    <Property Name="idOrders" Type="int" Nullable="false" />
+    <Property Name="idOrder" Type="int" Nullable="false" />
+    <Property Name="idCustomer" Type="int" Nullable="false" />
+    <Property Name="OrderDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="idEmployee" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Part">
+    <Key>
+      <PropertyRef Name="idPart" />
+    </Key>
+    <Property Name="idPart" Type="int" Nullable="false" />
+    <Property Name="idMoto" Type="int" Nullable="false" />
+    <Property Name="NamePart" Type="nchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhoneBook">
+    <Key>
+      <PropertyRef Name="idTellPhone" />
+    </Key>
+    <Property Name="idTellPhone" Type="int" Nullable="false" />
+    <Property Name="Tellphone" Type="decimal" Precision="11" Scale="0" Nullable="false" />
+    <Property Name="idEmployee" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="idProduct" />
+    </Key>
+    <Property Name="idProduct" Type="int" Nullable="false" />
+    <Property Name="idPart" Type="int" Nullable="false" />
+    <Property Name="Qty" Type="smallint" Nullable="false" />
+    <Property Name="Price" Type="smallmoney" Nullable="false" />
+    <Property Name="idProvider" Type="int" Nullable="false" />
+    <Property Name="idStore" Type="int" Nullable="false" />
+    <Property Name="idTypePart" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Provider">
+    <Key>
+      <PropertyRef Name="idProvider" />
+    </Key>
+    <Property Name="idProvider" Type="int" Nullable="false" />
+    <Property Name="NameProvider" Type="nchar" MaxLength="35" Nullable="false" />
+    <Property Name="idCity" Type="int" Nullable="false" />
+    <Property Name="Tellphone" Type="decimal" Precision="11" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="idStore" />
+    </Key>
+    <Property Name="idStore" Type="int" Nullable="false" />
+    <Property Name="NameStore" Type="nchar" MaxLength="35" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TypeComponent">
+    <Key>
+      <PropertyRef Name="idTypeComponent" />
+    </Key>
+    <Property Name="idTypeComponent" Type="int" Nullable="false" />
+    <Property Name="TypeComponentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idTypePart" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypePart">
+    <Key>
+      <PropertyRef Name="idTypePart" />
+    </Key>
+    <Property Name="idTypePart" Type="int" Nullable="false" />
+    <Property Name="NameTypePart" Type="nchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CashBox_TypeComponent">
+    <End Role="TypeComponent" Type="Self.TypeComponent" Multiplicity="1" />
+    <End Role="CashBox" Type="Self.CashBox" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeComponent">
+        <PropertyRef Name="idTypeComponent" />
+      </Principal>
+      <Dependent Role="CashBox">
+        <PropertyRef Name="idTypeComponent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_City">
+    <End Role="City" Type="Self.City" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="idCity" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="idCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Abakan_Street">
+    <End Role="Abakan_Street" Type="Self.Abakan_Street" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Abakan_Street">
+        <PropertyRef Name="idStreet" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="idStreet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_CashBox">
+    <End Role="CashBox" Type="Self.CashBox" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CashBox">
+        <PropertyRef Name="idCashBox" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="idCashBox" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_PhoneBook">
+    <End Role="PhoneBook" Type="Self.PhoneBook" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhoneBook">
+        <PropertyRef Name="idTellPhone" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="idTellPhone" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Motorcycle_CountryMoto">
+    <End Role="CountryMoto" Type="Self.CountryMoto" Multiplicity="1" />
+    <End Role="Motorcycle" Type="Self.Motorcycle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CountryMoto">
+        <PropertyRef Name="idCountryMoto" />
+      </Principal>
+      <Dependent Role="Motorcycle">
+        <PropertyRef Name="idCountryMoto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="idCustomer" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="idCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Products">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="idProduct" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="idProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="idCustomer" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="idCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="idEmployee" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="idEmployee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="idOrder" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="idOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Part_Motorcycle">
+    <End Role="Motorcycle" Type="Self.Motorcycle" Multiplicity="1" />
+    <End Role="Part" Type="Self.Part" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Motorcycle">
+        <PropertyRef Name="idMoto" />
+      </Principal>
+      <Dependent Role="Part">
+        <PropertyRef Name="idMoto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Part">
+    <End Role="Part" Type="Self.Part" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Part">
+        <PropertyRef Name="idPart" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="idPart" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Provider">
+    <End Role="Provider" Type="Self.Provider" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="idProvider" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="idProvider" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="idStore" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="idPart" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_TypePart">
+    <End Role="TypePart" Type="Self.TypePart" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypePart">
+        <PropertyRef Name="idTypePart" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="idTypePart" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Provider_City">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Provider" Type="Self.Provider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="idCity" />
+      </Principal>
+      <Dependent Role="Provider">
+        <PropertyRef Name="idCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TypeComponent_TypePart">
+    <End Role="TypePart" Type="Self.TypePart" Multiplicity="1" />
+    <End Role="TypeComponent" Type="Self.TypeComponent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypePart">
+        <PropertyRef Name="idTypePart" />
+      </Principal>
+      <Dependent Role="TypeComponent">
+        <PropertyRef Name="idTypePart" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище MotoRandModelContainer">
+    <EntitySet Name="Abakan_Street" EntityType="Self.Abakan_Street" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CashBox" EntityType="Self.CashBox" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CountryMoto" EntityType="Self.CountryMoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Motorcycle" EntityType="Self.Motorcycle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Part" EntityType="Self.Part" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhoneBook" EntityType="Self.PhoneBook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Provider" EntityType="Self.Provider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeComponent" EntityType="Self.TypeComponent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypePart" EntityType="Self.TypePart" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CashBox_TypeComponent" Association="Self.FK_CashBox_TypeComponent">
+      <End Role="TypeComponent" EntitySet="TypeComponent" />
+      <End Role="CashBox" EntitySet="CashBox" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_City" Association="Self.FK_Customer_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Abakan_Street" Association="Self.FK_Employee_Abakan_Street">
+      <End Role="Abakan_Street" EntitySet="Abakan_Street" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_CashBox" Association="Self.FK_Employee_CashBox">
+      <End Role="CashBox" EntitySet="CashBox" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_PhoneBook" Association="Self.FK_Employee_PhoneBook">
+      <End Role="PhoneBook" EntitySet="PhoneBook" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Motorcycle_CountryMoto" Association="Self.FK_Motorcycle_CountryMoto">
+      <End Role="CountryMoto" EntitySet="CountryMoto" />
+      <End Role="Motorcycle" EntitySet="Motorcycle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Customer" Association="Self.FK_Order_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Products" Association="Self.FK_Order_Products">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Customer" Association="Self.FK_Orders_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Employee" Association="Self.FK_Orders_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Order" Association="Self.FK_Orders_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Part_Motorcycle" Association="Self.FK_Part_Motorcycle">
+      <End Role="Motorcycle" EntitySet="Motorcycle" />
+      <End Role="Part" EntitySet="Part" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Part" Association="Self.FK_Products_Part">
+      <End Role="Part" EntitySet="Part" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Provider" Association="Self.FK_Products_Provider">
+      <End Role="Provider" EntitySet="Provider" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Store" Association="Self.FK_Products_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_TypePart" Association="Self.FK_Products_TypePart">
+      <End Role="TypePart" EntitySet="TypePart" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Provider_City" Association="Self.FK_Provider_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Provider" EntitySet="Provider" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TypeComponent_TypePart" Association="Self.FK_TypeComponent_TypePart">
+      <End Role="TypePart" EntitySet="TypePart" />
+      <End Role="TypeComponent" EntitySet="TypeComponent" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

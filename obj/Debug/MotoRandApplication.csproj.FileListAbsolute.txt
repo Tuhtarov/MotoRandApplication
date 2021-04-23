@@ -15,3 +15,10 @@ C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandAppli
 C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication.csproj.CoreCompileInputs.cache
 C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication.exe
 C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication.pdb
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\bin\Debug\EntityFramework.dll
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\bin\Debug\EntityFramework.xml
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication_Content.g.cs
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\MotoRandApplication.csproj.CopyComplete
