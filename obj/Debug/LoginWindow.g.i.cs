@@ -40,30 +40,6 @@ namespace MotoRandApplication {
     /// </summary>
     public partial class LoginWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
-        
-        #line 70 "..\..\LoginWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Label textStateDB;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 75 "..\..\LoginWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBox fieldLogin;
-        
-        #line default
-        #line hidden
-        
-        
-        #line 101 "..\..\LoginWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.TextBox fieldPassword;
-        
-        #line default
-        #line hidden
-        
         private bool _contentLoaded;
         
         /// <summary>
@@ -98,29 +74,6 @@ namespace MotoRandApplication {
             
             #line 11 "..\..\LoginWindow.xaml"
             ((MotoRandApplication.LoginWindow)(target)).Loaded += new System.Windows.RoutedEventHandler(this.LoadLoginWindow);
-            
-            #line default
-            #line hidden
-            return;
-            case 2:
-            this.textStateDB = ((System.Windows.Controls.Label)(target));
-            return;
-            case 3:
-            this.fieldLogin = ((System.Windows.Controls.TextBox)(target));
-            
-            #line 83 "..\..\LoginWindow.xaml"
-            this.fieldLogin.PreviewTextInput += new System.Windows.Input.TextCompositionEventHandler(this.loginField_PreviewTextInput);
-            
-            #line default
-            #line hidden
-            return;
-            case 4:
-            this.fieldPassword = ((System.Windows.Controls.TextBox)(target));
-            return;
-            case 5:
-            
-            #line 134 "..\..\LoginWindow.xaml"
-            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click);
             
             #line default
             #line hidden
