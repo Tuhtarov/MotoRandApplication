@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using MotoRandApplication.database;
 
 namespace MotoRandApplication
 {
@@ -22,22 +23,34 @@ namespace MotoRandApplication
     public partial class LoginWindow : Window
     {
         SqlConnection sqlConnection = null;
-
+        MotoRandEntities context;
+        const int six = 666666;
         public LoginWindow()
         {
+            context = new MotoRandEntities();
             InitializeComponent();
         }
 
+        private void test(int idpost)
+        {
+            var ct = context.City;
+            var queryCityes = from City in ct
+                              where City.IndexPost == idpost
+                              select City.NameCity;
+            MessageBox.Show(queryCityes.ToString());
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(CheckValidField.IsNotEmpty(fieldLogin.Text) && CheckValidField.IsNotEmpty(fieldPassword.Text))
+            test(six);
+
+            /*if(CheckValidField.IsNotEmpty(fieldLogin.Text) && CheckValidField.IsNotEmpty(fieldPassword.Text))
             {
                 MessageBox.Show("Поля не пустые", "Ввод");
             }
             else
             {
                 MessageBox.Show("Заполните все поля!", "Ошибка ввода");
-            }
+            }*/
         }
 
         private void loginField_PreviewTextInput(object sender, TextCompositionEventArgs e)
