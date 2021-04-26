@@ -190,6 +190,7 @@
     <Resource Include="res\images\harleyDavidson.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream
     <Content Include="database\MotoRand.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MotoRand.Context.cs</LastGenOutput>
@@ -204,6 +205,10 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+=======
+    <Folder Include="database\" />
+    <Folder Include="windows\" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
