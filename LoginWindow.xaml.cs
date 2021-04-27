@@ -67,11 +67,11 @@ namespace MotoRandApplication
             sqlConnection.Open();
             if(sqlConnection.State == ConnectionState.Open)
             {
-                textStateDB.Content = "Подключение к БД: установлено.";
+                //textStateDB.Content = "Подключение к БД: установлено.";
             }
             else
             {
-                textStateDB.Content = "Подключение к БД: не установлено.";
+                //textStateDB.Content = "Подключение к БД: не установлено.";
             }
         }
     }

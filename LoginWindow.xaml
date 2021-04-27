@@ -8,7 +8,8 @@
         Title="Авторизация"
         Height="450"
         Width="800"
-        Loaded="LoadLoginWindow" Icon="res/images/inDoorIcon.jpg">
+        Loaded="LoadLoginWindow" Icon="res/images/inDoorIcon.jpg" 
+        ResizeMode="NoResize" WindowStyle="SingleBorderWindow">
     <Grid>
 
         <Rectangle
@@ -31,12 +32,12 @@
 
         <!-- MotorCycle -->
         <Image
-            Margin="359,179,7.309,-2.345"
             Source="/res/images/harleyDavidson.png"
             Stretch="Fill"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
-            RenderTransformOrigin="0.5,0.5">
+            RenderTransformOrigin="0.5,0.5" 
+            Width="453" Height="247">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="-1"/>
@@ -49,111 +50,88 @@
 
         <!-- Окно авторизации -->
         <Border
-            HorizontalAlignment="left"
+            Width="300" Height="320"
+            HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            Height="285"
-            Margin="50,0,0.0,0"
-            Width="280"
             Background="White"
-            CornerRadius="40">
-            <StackPanel>
-                <Label
-                    FontFamily="Tw Cen MT Condensed Extra Bold"
-                    FontSize="36"
-                    HorizontalAlignment="Center"
-                    Content="MotoRand"
-                    Background="Transparent"
-                    Foreground="#FF3F3D3B">
-                </Label>
+            Margin="25,0,0,0">
+            <Border.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="45" />
+                </Style>
+            </Border.Resources>
+            <Border.Effect>
+                <DropShadowEffect 
+                    ShadowDepth="6" Opacity="0.5"/>
+            </Border.Effect>
 
-                <Label
-                    x:Name="textStateDB"
-                    HorizontalAlignment="Center"
-                    Content="Подключение к БД:" FontFamily="Arial" Background="White" Foreground="#FFC18446"/>
+            <StackPanel Orientation="Vertical">
 
-                <TextBox
-                    x:Name="fieldLogin"
-                    Margin="20,10,20,10"
-                    Height="45"
-                    FontSize="15px"
-                    Padding="20,10,20,10"
-                    TextAlignment="Left"
-                    MaxLength="20"
-                    BorderBrush="Black"
-                    PreviewTextInput="loginField_PreviewTextInput">
-                    <TextBox.Effect>
-                        <DropShadowEffect
-                            ShadowDepth="4"
-                            Color="DimGray"
-                            Opacity="0.2">
-                        </DropShadowEffect>  
-                    </TextBox.Effect>
+                <Label Content="MotoRand" HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="30"
+                       Foreground="#FF6A6A6A"/>
+
+                <TextBox x:Name="loginField"
+                         HorizontalAlignment="Center"
+                         Height="50" Width="250" Margin="8"
+                         TextAlignment="Center" Padding="11"
+                         Text="" FontSize="18">
                     <TextBox.Resources>
-                        <Style TargetType="Border">
-                            <Setter
-                                Property="CornerRadius"
-                                Value="10" />
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
-
-                <TextBox
-                    x:Name="fieldPassword"
-                    Margin="20,10,20,10"
-                    Height="45"
-                    FontSize="15px"
-                    Padding="20,10,20,10"
-                    MaxLength="20"
-                    BorderBrush="Black"
-                    Background="White">
-                    <TextBox.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius"
-                                    Value="10" />
-                        </Style>
-                    </TextBox.Resources>
-                    <TextBox.Effect>
-                        <DropShadowEffect
-                            ShadowDepth="4"
-                            Color="DimGray"
-                            Opacity="0.2">
-                        </DropShadowEffect>
-                    </TextBox.Effect>
-                </TextBox>
-
-                <Button
-                    Content="ВОЙТИ"
-                    FontFamily="Tw Cen MT Condensed Extra Bold"
-                    Background="#FFDC8A38"
-                    VerticalAlignment="Bottom"
-                    Height="40"
-                    Margin="50,10,50,60"
-                    FontSize="14"
-                    Foreground="#FF3F3D3B"
-                    Cursor="Hand"
-                    Click="Button_Click">
-                    <Button.Effect>
-                        <DropShadowEffect
-                            Color="DimGray"
-                            ShadowDepth="6"
-                            Opacity="0.2"/>
-                    </Button.Effect>
-                    <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="10"/>
                         </Style>
-                    </Button.Resources>
-                </Button>
-            </StackPanel>
-            
-            <Border.Effect>
-                <DropShadowEffect
-                ShadowDepth="6"
-                Color="DimGray"
-                Opacity="0.4"/>
-            </Border.Effect>
-            
-        </Border>
+                    </TextBox.Resources>
+                    <TextBox.Effect>
+                        <DropShadowEffect ShadowDepth="3" Opacity="0.2"/>
+                    </TextBox.Effect>
+                </TextBox>
 
+                <TextBox x:Name="passwordField"
+                         HorizontalAlignment="Center"
+                         Height="50" Width="250" Margin="8"
+                         TextAlignment="Center" Padding="11"
+                         Text="" FontSize="18">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                    <TextBox.Effect>
+                        <DropShadowEffect ShadowDepth="3" Opacity="0.2"/>
+                    </TextBox.Effect>
+                </TextBox>
+
+                <ComboBox x:Name="chooseRole"
+                         HorizontalAlignment="Center"
+                         Height="50" Width="250" Margin="8" Padding="14"
+                         FontSize="15">
+                    <ComboBox.Effect>
+                        <DropShadowEffect ShadowDepth="3" Opacity="0.2"/>
+                    </ComboBox.Effect>
+
+                    <ComboBoxItem IsSelected="True" Content="Продавец"
+                                  FontSize="14" x:Name="itemShopman"/>
+                    <ComboBoxItem x:Name="itemOperator" Content="Оператор" FontSize="14"/>
+                    <ComboBoxItem x:Name="itemAdmin" Content="Администратор" FontSize="14"/>
+                </ComboBox>
+                
+                <Button x:Name="btnSignIn"
+                        Height="45" Width="180" Margin="8"
+                        BorderBrush="#FF707070" Background="#FFDC8A38"
+                        Content="ВОЙТИ" FontFamily="Tw Cen MT Condensed Extra Bold"
+                        FontSize="20" Foreground="#FF6A6A6A">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10" />
+                        </Style>
+                    </Button.Resources>
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="3" Opacity="0.2"/>
+                    </Button.Effect>
+                </Button>
+                
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
