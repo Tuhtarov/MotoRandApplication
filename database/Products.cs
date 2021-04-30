@@ -17,22 +17,16 @@ namespace MotoRandApplication.database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Products()
         {
-            this.Order = new HashSet<Order>();
+            this.Orders = new HashSet<Orders>();
         }
     
-        public int idProduct { get; set; }
-        public int idPart { get; set; }
-        public short Qty { get; set; }
-        public decimal Price { get; set; }
-        public int idProvider { get; set; }
-        public int idStore { get; set; }
-        public int idTypePart { get; set; }
+        public int IdProduct { get; set; }
+        public int IdPart { get; set; }
+        public int Price { get; set; }
+        public int Qty { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Order { get; set; }
-        public virtual Part Part { get; set; }
-        public virtual Provider Provider { get; set; }
-        public virtual Store Store { get; set; }
-        public virtual TypePart TypePart { get; set; }
+        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual Parts Parts { get; set; }
     }
 }

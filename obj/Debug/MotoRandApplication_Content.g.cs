@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("database/motorand.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("database/motorand.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("database/model1.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("database/model1.tt")]
 
 

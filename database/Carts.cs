@@ -12,20 +12,11 @@ namespace MotoRandApplication.database
     using System;
     using System.Collections.Generic;
     
-    public partial class TypeComponent
+    public partial class Carts
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TypeComponent()
-        {
-            this.CashBox = new HashSet<CashBox>();
-        }
+        public int IdCart { get; set; }
+        public int IdOrder { get; set; }
     
-        public int idTypeComponent { get; set; }
-        public string TypeComponentName { get; set; }
-        public int idTypePart { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CashBox> CashBox { get; set; }
-        public virtual TypePart TypePart { get; set; }
+        public virtual Orders Orders { get; set; }
     }
 }

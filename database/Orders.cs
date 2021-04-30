@@ -14,14 +14,24 @@ namespace MotoRandApplication.database
     
     public partial class Orders
     {
-        public int idOrders { get; set; }
-        public int idOrder { get; set; }
-        public int idCustomer { get; set; }
-        public System.DateTime OrderDate { get; set; }
-        public int idEmployee { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Orders()
+        {
+            this.Carts = new HashSet<Carts>();
+        }
     
-        public virtual Customer Customer { get; set; }
-        public virtual Employee Employee { get; set; }
-        public virtual Order Order { get; set; }
+        public int IdOrder { get; set; }
+        public int IdProduct { get; set; }
+        public int Qty { get; set; }
+        public int TotalPrice { get; set; }
+        public Nullable<int> IdCustomer { get; set; }
+        public int IdEmployee { get; set; }
+        public System.DateTime Date { get; set; }
+    
+        public virtual Customers Customers { get; set; }
+        public virtual Employees Employees { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Carts> Carts { get; set; }
+        public virtual Products Products { get; set; }
     }
 }

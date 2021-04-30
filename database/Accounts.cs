@@ -12,21 +12,24 @@ namespace MotoRandApplication.database
     using System;
     using System.Collections.Generic;
     
-    public partial class TypePart
+    public partial class Accounts
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TypePart()
+        public Accounts()
         {
-            this.Products = new HashSet<Products>();
-            this.TypeComponent = new HashSet<TypeComponent>();
+            this.Administrators = new HashSet<Administrators>();
+            this.Employees = new HashSet<Employees>();
         }
     
-        public int idTypePart { get; set; }
-        public string NameTypePart { get; set; }
+        public int IdAccount { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public int IdRole { get; set; }
     
+        public virtual Roles Roles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Products> Products { get; set; }
+        public virtual ICollection<Administrators> Administrators { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TypeComponent> TypeComponent { get; set; }
+        public virtual ICollection<Employees> Employees { get; set; }
     }
 }

@@ -12,26 +12,23 @@ namespace MotoRandApplication.database
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class Parts
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
+        public Parts()
         {
-            this.Order = new HashSet<Order>();
-            this.Orders = new HashSet<Orders>();
+            this.Products = new HashSet<Products>();
         }
     
-        public int idCustomer { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public System.DateTime BirthDay { get; set; }
-        public decimal Tellphone { get; set; }
-        public int idCity { get; set; }
+        public int IdPart { get; set; }
+        public int Number { get; set; }
+        public string Part { get; set; }
+        public int IdProvider { get; set; }
+        public int IdMotorcycle { get; set; }
     
-        public virtual City City { get; set; }
+        public virtual Motorcycles Motorcycles { get; set; }
+        public virtual Providers Providers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Order { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Products> Products { get; set; }
     }
 }

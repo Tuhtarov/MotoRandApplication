@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11fd49c21fe845418042e9442013625b" Name="Diagram1">
+        <EntityTypeShape EntityType="MotoRandNewModel.Accounts" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandNewModel.Administrators" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandNewModel.Customers" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandNewModel.Employees" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandNewModel.Motorcycles" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandNewModel.Orders" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandNewModel.Parts" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandNewModel.Products" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandNewModel.Providers" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandNewModel.Roles" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandNewModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MotoRandNewModel.Carts" Width="1.5" PointX="9.75" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="MotoRandNewModel.FK_Accounts_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandNewModel.FK_Administrators_Accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandNewModel.FK_Employees_Accounts" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandNewModel.FK_Orders_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandNewModel.FK_Orders_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandNewModel.FK_Parts_Motorcycles" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandNewModel.FK_Carts_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandNewModel.FK_Orders_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandNewModel.FK_Parts_Providers" ManuallyRouted="false" />
+        <AssociationConnector Association="MotoRandNewModel.FK_Products_Parts" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

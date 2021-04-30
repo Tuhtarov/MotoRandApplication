@@ -77,71 +77,56 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="database\Abakan_Street.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
+    <Compile Include="database\Accounts.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="database\CashBox.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
+    <Compile Include="database\Administrators.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="database\City.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
+    <Compile Include="database\Carts.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="database\CountryMoto.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
+    <Compile Include="database\Customers.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="database\Customer.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
+    <Compile Include="database\Employees.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="database\Employee.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
-    </Compile>
-    <Compile Include="database\MotoRand.Context.cs">
+    <Compile Include="database\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MotoRand.Context.tt</DependentUpon>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="database\MotoRand.cs">
+    <Compile Include="database\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MotoRand.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="database\MotoRand.Designer.cs">
+    <Compile Include="database\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MotoRand.edmx</DependentUpon>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="database\Motorcycle.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
-    </Compile>
-    <Compile Include="database\Order.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
+    <Compile Include="database\Motorcycles.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="database\Orders.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="database\Part.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
-    </Compile>
-    <Compile Include="database\PhoneBook.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
+    <Compile Include="database\Parts.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="database\Products.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="database\Provider.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
+    <Compile Include="database\Providers.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="database\Store.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
+    <Compile Include="database\Roles.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="database\sysdiagrams.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
-    </Compile>
-    <Compile Include="database\TypeComponent.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
-    </Compile>
-    <Compile Include="database\TypePart.cs">
-      <DependentUpon>MotoRand.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="packages\uimanagement\CheckValidField.cs" />
     <Compile Include="LoginWindow.xaml.cs">
@@ -170,12 +155,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="database\MotoRand.edmx">
+    <EntityDeploy Include="database\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MotoRand.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="database\MotoRand.edmx.diagram">
-      <DependentUpon>MotoRand.edmx</DependentUpon>
+    <None Include="database\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -190,20 +175,23 @@
     <Resource Include="res\images\harleyDavidson.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="database\MotoRand.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MotoRand.Context.cs</LastGenOutput>
-      <DependentUpon>MotoRand.edmx</DependentUpon>
-    </Content>
-    <Content Include="database\MotoRand.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MotoRand.edmx</DependentUpon>
-      <LastGenOutput>MotoRand.cs</LastGenOutput>
-    </Content>
     <Resource Include="res\images\inDoorIcon.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="database\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="database\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

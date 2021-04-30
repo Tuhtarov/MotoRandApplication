@@ -75,8 +75,7 @@
                 <TextBox x:Name="loginField"
                          HorizontalAlignment="Center"
                          Height="50" Width="250" Margin="8"
-                         TextAlignment="Center" Padding="11"
-                         Text="" FontSize="18">
+                         TextAlignment="Center" Padding="11" FontSize="18" TextChanged="loginFieldChanged">
                     <TextBox.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -102,7 +101,7 @@
                     </TextBox.Effect>
                 </TextBox>
 
-                <ComboBox x:Name="chooseRole"
+                <ComboBox x:Name="CBchooseRole"
                          HorizontalAlignment="Center"
                          Height="50" Width="250" Margin="8" Padding="14"
                          FontSize="15">
@@ -120,7 +119,7 @@
                         Height="45" Width="180" Margin="8"
                         BorderBrush="#FF707070" Background="#FFDC8A38"
                         Content="ВОЙТИ" FontFamily="Tw Cen MT Condensed Extra Bold"
-                        FontSize="20" Foreground="#FF6A6A6A">
+                        FontSize="20" Foreground="#FF6A6A6A" Click="clickSignIn">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="10" />

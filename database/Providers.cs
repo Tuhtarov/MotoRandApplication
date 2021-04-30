@@ -12,19 +12,20 @@ namespace MotoRandApplication.database
     using System;
     using System.Collections.Generic;
     
-    public partial class PhoneBook
+    public partial class Providers
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PhoneBook()
+        public Providers()
         {
-            this.Employee = new HashSet<Employee>();
+            this.Parts = new HashSet<Parts>();
         }
     
-        public int idTellPhone { get; set; }
-        public decimal Tellphone { get; set; }
-        public int idEmployee { get; set; }
+        public int IdProvider { get; set; }
+        public string Provider { get; set; }
+        public string City { get; set; }
+        public int Phone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee> Employee { get; set; }
+        public virtual ICollection<Parts> Parts { get; set; }
     }
 }

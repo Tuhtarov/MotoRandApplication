@@ -12,18 +12,15 @@ namespace MotoRandApplication.database
     using System;
     using System.Collections.Generic;
     
-    public partial class CountryMoto
+    public partial class Administrators
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CountryMoto()
-        {
-            this.Motorcycle = new HashSet<Motorcycle>();
-        }
+        public int IdAdministrator { get; set; }
+        public string Name { get; set; }
+        public string Family { get; set; }
+        public string SecondName { get; set; }
+        public string Phone { get; set; }
+        public int IdAccount { get; set; }
     
-        public int idCountryMoto { get; set; }
-        public string CountryMoto1 { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Motorcycle> Motorcycle { get; set; }
+        public virtual Accounts Accounts { get; set; }
     }
 }

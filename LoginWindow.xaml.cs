@@ -22,56 +22,87 @@ namespace MotoRandApplication
     /// Логика взаимодействия для LoginWindow.xaml
     public partial class LoginWindow : Window
     {
-        SqlConnection sqlConnection = null;
-        MotoRandEntities context;
-        const int six = 666666;
+
+        MotoRandNewEntities contextDB;
+        SqlConnection motoRandConnection = null;
+
         public LoginWindow()
         {
-            context = new MotoRandEntities();
             InitializeComponent();
-        }
-
-        private void test(int idpost)
-        {
-            var ct = context.City;
-            var queryCityes = from City in ct
-                              where City.IndexPost == idpost
-                              select City.NameCity;
-            MessageBox.Show(queryCityes.ToString());
-        }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            test(six);
-
-            /*if(CheckValidField.IsNotEmpty(fieldLogin.Text) && CheckValidField.IsNotEmpty(fieldPassword.Text))
-            {
-                MessageBox.Show("Поля не пустые", "Ввод");
-            }
-            else
-            {
-                MessageBox.Show("Заполните все поля!", "Ошибка ввода");
-            }*/
-        }
-
-        private void loginField_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            if (!CheckValidField.IsUserInputCorrect(e.Text))
-            {
-                e.Handled = true;
-            }
         }
 
         private void LoadLoginWindow(object sender, RoutedEventArgs e)
         {
-            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoRandConnect"].ConnectionString);
-            sqlConnection.Open();
-            if(sqlConnection.State == ConnectionState.Open)
+            motoRandConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoRandNewConnect"].ConnectionString);
+            motoRandConnection.Open();
+            contextDB = new MotoRandNewEntities();
+        }
+
+        private void clickSignIn(object sender, RoutedEventArgs e)
+        {
+
+            var acc = contextDB.Accounts;
+            var emp = contextDB.Employees;
+
+            var query = from Accounts in acc where Accounts.Login == loginField.Text select Accounts.IdAccount;
+            var queryTwo = from Employees in emp where Employees.IdAccount == query.FirstOrDefault() select Employees.IdEmployee;
+
+            if(loginField.Text != "" && passwordField.Text != "")
             {
-                //textStateDB.Content = "Подключение к БД: установлено.";
+                if(query.FirstOrDefault() != 0){
+                    var value = $"{contextDB.Employees.Find(queryTwo.FirstOrDefault()).Name}" +
+                        $" {contextDB.Employees.Find(queryTwo.FirstOrDefault()).Family}" +
+                        $" {contextDB.Employees.Find(queryTwo.FirstOrDefault()).SecondName}";
+
+                    MessageBox.Show($"Здарова {value}");
+
+                    /* var accaunt = contextDB.Accounts.Where(a => a.Login == loginField.Text && a.Password == passwordField.Text);
+                    var ack = accaunt as Employees;
+                    
+
+                    Employees employee = (Employees)contextDB.Employees.Where(em => em.IdAccount == accaunt.IdAccount);
+                    MessageBox.Show(employee.Name + " " + employee.Family); */
+                }
+                else
+                {
+                    MessageBox.Show("Не вход");
+                }
+
+            /* switch (CBchooseRole.Text)
+            {
+                case "Продавец":
+                    MessageBox.Show($"Продавец {contextDB.Employees.Find(2).Name + " а его фама))) " + contextDB.Employees.Find(2).Family}");
+                    break;
+                case "Администратор":
+                    MessageBox.Show("Администратор");
+                    break;
+                case "Оператор":
+                    MessageBox.Show("Оператор");
+                    break;
+                default:
+                    MessageBox.Show("Выберите роль");
+                    break;
+            } */
+
+            } else
+            {
+                MessageBox.Show("Заполните все поля.", "Ошибка", MessageBoxButton.OK);
+            }
+
+        }
+
+
+        //вот здесь остановился
+        private void loginFieldChanged(object sender, TextChangedEventArgs e)
+        {
+            if(loginField.Text == "")
+            {
+                loginField.Text = "Логин";
+                loginField.Foreground = Brushes.Gray;
             }
             else
             {
-                //textStateDB.Content = "Подключение к БД: не установлено.";
+                loginField.Foreground = Brushes.Black;
             }
         }
     }

@@ -12,24 +12,18 @@ namespace MotoRandApplication.database
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class Roles
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
+        public Roles()
         {
-            this.Orders = new HashSet<Orders>();
+            this.Accounts = new HashSet<Accounts>();
         }
     
-        public int idOrder { get; set; }
-        public int idCustomer { get; set; }
-        public short Qty { get; set; }
-        public decimal Value { get; set; }
-        public int idProduct { get; set; }
-        public int idTypeComponent { get; set; }
+        public int IdRole { get; set; }
+        public string Role { get; set; }
     
-        public virtual Customer Customer { get; set; }
-        public virtual Products Products { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Accounts> Accounts { get; set; }
     }
 }

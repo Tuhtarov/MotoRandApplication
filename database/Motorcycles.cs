@@ -12,18 +12,20 @@ namespace MotoRandApplication.database
     using System;
     using System.Collections.Generic;
     
-    public partial class Store
+    public partial class Motorcycles
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Store()
+        public Motorcycles()
         {
-            this.Products = new HashSet<Products>();
+            this.Parts = new HashSet<Parts>();
         }
     
-        public int idStore { get; set; }
-        public string NameStore { get; set; }
+        public int IdMotorcycle { get; set; }
+        public string Brand { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Products> Products { get; set; }
+        public virtual ICollection<Parts> Parts { get; set; }
     }
 }
