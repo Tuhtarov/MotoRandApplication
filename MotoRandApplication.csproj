@@ -65,6 +65,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="uix\frames\capabilities\shopman\ShopmanMainMenu.xaml.cs">
+      <DependentUpon>ShopmanMainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="uix\frames\capabilities\shopman\ShopmanRegistrationCustomer.xaml.cs">
+      <DependentUpon>ShopmanRegistrationCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="uix\frames\capabilities\shopman\ShopmanSell.xaml.cs">
+      <DependentUpon>ShopmanSell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="uix\frames\menu\shopman\ShopmanMenu.xaml.cs">
+      <DependentUpon>ShopmanMenu.xaml</DependentUpon>
+    </Compile>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,6 +148,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="uix\frames\capabilities\shopman\ShopmanMainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="uix\frames\capabilities\shopman\ShopmanRegistrationCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="uix\frames\capabilities\shopman\ShopmanSell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="uix\frames\menu\shopman\ShopmanMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -180,7 +208,15 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="packages\uixmanagement\AdminManage\" />
+    <Folder Include="packages\uixmanagement\OperatorManage\" />
+    <Folder Include="packages\uixmanagement\ShopmanManage\" />
+    <Folder Include="uix\frames\capabilities\admin\" />
+    <Folder Include="uix\frames\capabilities\operator\" />
+    <Folder Include="uix\frames\menu\admin\" />
+    <Folder Include="uix\frames\menu\operator\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="database\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -192,6 +228,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="res\images\icons\iconStore.png" />
+    <Resource Include="res\images\icons\barIcon.png" />
+    <Resource Include="res\images\icons\profileIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

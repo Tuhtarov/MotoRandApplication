@@ -4,6 +4,37 @@
              xmlns:local="clr-namespace:MotoRandApplication"
              StartupUri="LoginWindow.xaml">
     <Application.Resources>
-         
+        
+        <Style TargetType="Label" x:Key="MainMenuToolBarLabel">
+            <Setter Property="FontFamily" Value="Franklin Gothic Book" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        
+        <!-- Это для большого текста (заголовков) в главном меню каждой роли -->
+        <Style TargetType="TextBlock" x:Key="MainMenuTextHeader">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontFamily" Value="Franklin Gothic Book" />
+            <Setter Property="FontSize" Value="26" />
+        </Style>
+        
+        <!-- Это для малого текста в главном меню каждой роли -->
+        <Style TargetType="TextBlock" x:Key="MainMenuTextLight">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontFamily" Value="Franklin Gothic Book" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Margin" Value="10,0,0,10" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+
+        <Style TargetType="TextBox" >
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"></Setter>
+                </Style>
+            </Style.Resources>
+        </Style>
+        
     </Application.Resources>
 </Application>

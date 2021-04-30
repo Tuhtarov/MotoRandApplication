@@ -16,6 +16,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using MotoRandApplication.database;
+using MotoRandApplication.uix.frames.menu.shopman;
 
 namespace MotoRandApplication
 {
@@ -24,6 +25,7 @@ namespace MotoRandApplication
     {
 
         MotoRandNewEntities contextDB;
+        ShopmanMenu shopman;
         SqlConnection motoRandConnection = null;
 
         public LoginWindow()
@@ -50,11 +52,13 @@ namespace MotoRandApplication
             if(loginField.Text != "" && passwordField.Text != "")
             {
                 if(query.FirstOrDefault() != 0){
-                    var value = $"{contextDB.Employees.Find(queryTwo.FirstOrDefault()).Name}" +
+                    string value = $"{contextDB.Employees.Find(queryTwo.FirstOrDefault()).Name}" +
                         $" {contextDB.Employees.Find(queryTwo.FirstOrDefault()).Family}" +
                         $" {contextDB.Employees.Find(queryTwo.FirstOrDefault()).SecondName}";
 
-                    MessageBox.Show($"Здарова {value}");
+                    shopman = new ShopmanMenu(value);
+                    this.Close();
+                    shopman.Show();
 
                     /* var accaunt = contextDB.Accounts.Where(a => a.Login == loginField.Text && a.Password == passwordField.Text);
                     var ack = accaunt as Employees;
