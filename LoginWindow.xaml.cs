@@ -11,7 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MotoRandApplication.packages.uimanagement;
 //здесь подключения для работы с БД
+
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
@@ -23,15 +25,20 @@ namespace MotoRandApplication
     /// Логика взаимодействия для LoginWindow.xaml
     public partial class LoginWindow : Window
     {
-
+        SqlConnection motoRandConnection = null;
         MotoRandNewEntities contextDB;
         ShopmanMenu shopman;
-        SqlConnection motoRandConnection = null;
+
+        Watermarks loginPlaceholder;
+        Watermarks passwordPlaceholder;
 
         public LoginWindow()
         {
             InitializeComponent();
+            InitUtils();
         }
+
+      
 
         private void LoadLoginWindow(object sender, RoutedEventArgs e)
         {
@@ -45,7 +52,6 @@ namespace MotoRandApplication
 
             var acc = contextDB.Accounts;
             var emp = contextDB.Employees;
-
             var query = from Accounts in acc where Accounts.Login == loginField.Text select Accounts.IdAccount;
             var queryTwo = from Employees in emp where Employees.IdAccount == query.FirstOrDefault() select Employees.IdEmployee;
 
@@ -72,22 +78,6 @@ namespace MotoRandApplication
                     MessageBox.Show("Не вход");
                 }
 
-            /* switch (CBchooseRole.Text)
-            {
-                case "Продавец":
-                    MessageBox.Show($"Продавец {contextDB.Employees.Find(2).Name + " а его фама))) " + contextDB.Employees.Find(2).Family}");
-                    break;
-                case "Администратор":
-                    MessageBox.Show("Администратор");
-                    break;
-                case "Оператор":
-                    MessageBox.Show("Оператор");
-                    break;
-                default:
-                    MessageBox.Show("Выберите роль");
-                    break;
-            } */
-
             } else
             {
                 MessageBox.Show("Заполните все поля.", "Ошибка", MessageBoxButton.OK);
@@ -95,19 +85,18 @@ namespace MotoRandApplication
 
         }
 
-
-        //вот здесь остановился
-        private void loginFieldChanged(object sender, TextChangedEventArgs e)
+        private void OnTextChangedSignIn(object sender, TextChangedEventArgs e)
         {
-            if(loginField.Text == "")
-            {
-                loginField.Text = "Логин";
-                loginField.Foreground = Brushes.Gray;
-            }
-            else
-            {
-                loginField.Foreground = Brushes.Black;
-            }
+            loginField.Background = loginField.Text == "" ? loginPlaceholder.GetPlaceholder() : null;
+            passwordField.Background = passwordField.Text == "" ? passwordPlaceholder.GetPlaceholder() : null;
+        }
+
+        private void InitUtils()
+        {
+            loginPlaceholder = new Watermarks(@"C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\res\images\watermarks\loginholder.png");
+            passwordPlaceholder = new Watermarks(@"C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\res\images\watermarks\passwordholder.png");
         }
     }
+
+
 }

@@ -65,6 +65,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="packages\uimanagement\Watermarks.cs" />
     <Compile Include="uix\frames\capabilities\shopman\ShopmanMainMenu.xaml.cs">
       <DependentUpon>ShopmanMainMenu.xaml</DependentUpon>
     </Compile>
@@ -228,6 +229,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="res\images\watermarks\loginholder.png" />
+    <Resource Include="res\images\watermarks\passwordholder.png" />
     <Resource Include="res\images\icons\iconStore.png" />
     <Resource Include="res\images\icons\barIcon.png" />
     <Resource Include="res\images\icons\profileIcon.png" />

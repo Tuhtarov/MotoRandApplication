@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:MotoRandApplication.uix.frames.menu.shopman"
         mc:Ignorable="d"
         Icon="C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\res\images\icons\iconStore.png"
-        Title="Рабочий стол" MinHeight="550" MinWidth="850">
+        Title="Рабочий стол"
+        
+        MinHeight="650"
+        MinWidth="850">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         
         <Grid.RowDefinitions>
@@ -58,7 +61,9 @@
                     StretchDirection="DownOnly"
                     VerticalAlignment="Center"
                     Cursor="Hand"
-                    Height="15" Width="15" Margin="10">
+                    Height="15"
+                    Width="15"
+                    Margin="10">
                 </Image>
 
             </StackPanel>

@@ -8,8 +8,11 @@
         Title="Авторизация"
         Height="450"
         Width="800"
-        Loaded="LoadLoginWindow" Icon="res/images/inDoorIcon.jpg" 
-        ResizeMode="NoResize" WindowStyle="SingleBorderWindow">
+        Loaded="LoadLoginWindow" 
+        Icon="res/images/inDoorIcon.jpg" 
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow">
+    
     <Grid>
 
         <Rectangle
@@ -67,66 +70,137 @@
 
             <StackPanel Orientation="Vertical">
 
-                <Label Content="MotoRand" HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="30"
-                       Foreground="#FF6A6A6A"/>
+                <Label
+                    Content="MotoRand" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontFamily="Tw Cen MT Condensed Extra Bold" 
+                    FontSize="30"
+                    Foreground="#FF6A6A6A"/>
 
-                <TextBox x:Name="loginField"
-                         HorizontalAlignment="Center"
-                         Height="50" Width="250" Margin="8"
-                         TextAlignment="Center" Padding="11" FontSize="18" TextChanged="loginFieldChanged">
+                <TextBox
+                    x:Name="loginField"
+                    HorizontalAlignment="Center"
+                    Height="50"
+                    Width="250"
+                    Margin="8"
+                    TextAlignment="Center"
+                    Padding="11"
+                    FontSize="18"
+                    TextChanged="OnTextChangedSignIn"
+                    MaxLength="20">
                     <TextBox.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="10"/>
+                        <Style
+                            TargetType="Border">
+                            <Setter
+                                Property="CornerRadius"
+                                Value="10"/>
                         </Style>
                     </TextBox.Resources>
+                    
                     <TextBox.Effect>
-                        <DropShadowEffect ShadowDepth="3" Opacity="0.2"/>
+                        <DropShadowEffect 
+                            ShadowDepth="3"
+                            Opacity="0.2"/>
                     </TextBox.Effect>
+                    
+                    <TextBox.Background>
+                        <ImageBrush
+                            ImageSource="res\images\watermarks\loginholder.png"
+                            Stretch="None" />
+                    </TextBox.Background>
                 </TextBox>
 
-                <TextBox x:Name="passwordField"
-                         HorizontalAlignment="Center"
-                         Height="50" Width="250" Margin="8"
-                         TextAlignment="Center" Padding="11"
-                         Text="" FontSize="18">
+                <TextBox
+                    x:Name="passwordField"
+                    HorizontalAlignment="Center"
+                    Height="50"
+                    Width="250"
+                    Margin="8"
+                    MaxLength="20"
+                    TextAlignment="Center"
+                    Padding="11"
+                    TextChanged="OnTextChangedSignIn"
+                    FontSize="18">
                     <TextBox.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="10"/>
+                        <Style
+                            TargetType="Border">
+                            <Setter
+                                Property="CornerRadius"
+                                Value="10"/>
                         </Style>
                     </TextBox.Resources>
+                    
                     <TextBox.Effect>
-                        <DropShadowEffect ShadowDepth="3" Opacity="0.2"/>
+                        <DropShadowEffect
+                            ShadowDepth="3"
+                            Opacity="0.2"/>
                     </TextBox.Effect>
+
+                    <TextBox.Background>
+                        <ImageBrush
+                            ImageSource="res\images\watermarks\passwordholder.png" 
+                            Stretch="None"/>
+                    </TextBox.Background>
                 </TextBox>
 
-                <ComboBox x:Name="CBchooseRole"
-                         HorizontalAlignment="Center"
-                         Height="50" Width="250" Margin="8" Padding="14"
-                         FontSize="15">
+                <ComboBox
+                    x:Name="CBchooseRole"
+                    HorizontalAlignment="Center"
+                    Height="50"
+                    Width="250" 
+                    Margin="8"
+                    Padding="14"
+                    FontSize="15">
                     <ComboBox.Effect>
-                        <DropShadowEffect ShadowDepth="3" Opacity="0.2"/>
+                        <DropShadowEffect 
+                            ShadowDepth="3"
+                            Opacity="0.2"/>
                     </ComboBox.Effect>
 
-                    <ComboBoxItem IsSelected="True" Content="Продавец"
-                                  FontSize="14" x:Name="itemShopman"/>
-                    <ComboBoxItem x:Name="itemOperator" Content="Оператор" FontSize="14"/>
-                    <ComboBoxItem x:Name="itemAdmin" Content="Администратор" FontSize="14"/>
+                    <ComboBoxItem
+                        IsSelected="True"
+                        Content="Продавец"
+                        FontSize="14" 
+                        x:Name="itemShopman"/>
+                    
+                    <ComboBoxItem
+                        x:Name="itemOperator"
+                        Content="Оператор"
+                        FontSize="14"/>
+                    
+                    <ComboBoxItem
+                        x:Name="itemAdmin" 
+                        Content="Администратор" 
+                        FontSize="14"/>
+                    
                 </ComboBox>
                 
-                <Button x:Name="btnSignIn"
-                        Height="45" Width="180" Margin="8"
-                        BorderBrush="#FF707070" Background="#FFDC8A38"
-                        Content="ВОЙТИ" FontFamily="Tw Cen MT Condensed Extra Bold"
-                        FontSize="20" Foreground="#FF6A6A6A" Click="clickSignIn">
+                <Button
+                    x:Name="btnSignIn"
+                    Height="45"
+                    Width="180"
+                    Margin="8"
+                    BorderBrush="#FF707070" 
+                    Background="#FFDC8A38"
+                    Content="ВОЙТИ" 
+                    FontFamily="Tw Cen MT Condensed Extra Bold"
+                    FontSize="20"
+                    Foreground="#FF6A6A6A" 
+                    Click="clickSignIn">
                     <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="10" />
+                        <Style
+                            TargetType="Border">
+                            <Setter
+                                Property="CornerRadius"
+                                Value="10" />
                         </Style>
                     </Button.Resources>
+                    
                     <Button.Effect>
-                        <DropShadowEffect ShadowDepth="3" Opacity="0.2"/>
+                        <DropShadowEffect
+                            ShadowDepth="3"
+                            Opacity="0.2"/>
                     </Button.Effect>
                 </Button>
                 

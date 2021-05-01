@@ -5,79 +5,158 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MotoRandApplication.uix.frames.capabilities.shopman"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="900"
+      d:DesignHeight="600" d:DesignWidth="1200"
       Title="Регистрация клиента">
 
     <Page.Resources>
         <!-- Ресурсы Label -->
-        <Style TargetType="Label">
-            <Setter Property="Margin" Value="15" />
-            <Setter Property="Padding" Value="0,10,0,0" />
-            <Setter Property="Height" Value="35" />
+        <Style TargetType="Label" BasedOn="{StaticResource StyleLabelOnForms}">
+            <Setter Property="HorizontalAlignment" Value="Left" />
         </Style>
         <!-- Ресурсы TextBox -->
-        <Style TargetType="TextBox">
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5" />
-                </Style>
-            </Style.Resources>
-            <Setter Property="Height" Value="35"/>
-            <Setter Property="Margin" Value="15,15,50,15"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Style TargetType="TextBox" BasedOn="{StaticResource DefaultTextBox}">
+            <Setter Property="Width" Value="240" />
+            <Setter Property="Margin" Value="0,0,5,0" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <!-- Ресурсы Button -->
+        <Style TargetType="Button" BasedOn="{StaticResource StyleButtonOnForms}">
         </Style>
     </Page.Resources>
     
     <Grid Background="White">
-        <Border Margin="40" CornerRadius="20" Background="White">
+        <Border
+            MaxHeight="700"
+            MaxWidth="1450"
+            Margin="40"
+            CornerRadius="30"
+            Background="White">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="20" Opacity="0.2" />
             </Border.Effect>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="320"></ColumnDefinition>
+                    <ColumnDefinition MaxWidth="380"></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                
+
                 <!-- Первый блок -->
-                <StackPanel Grid.Column="0" Orientation="Vertical">
-                    <TextBlock Text="Зарегистрировать клиента" Margin="0,15,0,15"
-                           HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                    <Grid VerticalAlignment="Stretch">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        
-                        <!-- Первая половина первого блока -->
-                        <StackPanel Orientation="Vertical" Grid.Column="0">
-                            <Label>Имя</Label>
-                            <Label>Фамилия</Label>
-                            <Label>Отчество</Label>
-                            <Label>Телефон</Label>
-                        </StackPanel>
-                        
-                        <!-- Вторая половина первого блока -->
-                        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="0,0,10,0">
-                            <TextBox x:Name="FieldName"></TextBox>
-                            <TextBox x:Name="FieldFamily"></TextBox>
-                            <TextBox x:Name="FieldPatronymic"></TextBox>
-                            <TextBox x:Name="FieldPhone"></TextBox>
-                        </StackPanel>
+                <StackPanel
+                    Grid.Column="0"
+                    Margin="10,50,10,50"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch">
+
+                    <Grid Margin="0,0,5,15">
+                        <Label
+                            Content="Имя">
+                        </Label>
+                        <TextBox
+                            >
+                            <TextBox.Effect>
+                                <DropShadowEffect ShadowDepth="2" Opacity="0.1" />
+                            </TextBox.Effect>
+                        </TextBox>
+                    </Grid>
+
+                        <Grid Margin="0,0,5,15">
+                            <Label
+                                Content="Фамилия">
+                            </Label>
+                            <TextBox
+                                >
+                            <TextBox.Effect>
+                                <DropShadowEffect ShadowDepth="2" Opacity="0.1" />
+                            </TextBox.Effect>
+                        </TextBox>
+                        </Grid>
+
+                        <Grid Margin="0,0,5,15">
+                            <Label
+                                Content="Отчество">
+                            </Label>
+                            <TextBox
+                                >
+                            <TextBox.Effect>
+                                <DropShadowEffect ShadowDepth="2" Opacity="0.1" />
+                            </TextBox.Effect>
+                        </TextBox>
+                        </Grid>
+
+                    <Grid Margin="0,0,5,15">
+                        <Label
+                            Content="Телефон">
+                        </Label>
+                        <TextBox
+                            MaxLength="12"
+                            >
+                            <TextBox.Effect>
+                                <DropShadowEffect ShadowDepth="2" Opacity="0.1" />
+                            </TextBox.Effect>
+                        </TextBox>
+                    </Grid>
+
+                    <Button
+                        HorizontalAlignment="Center"
+                        Margin="20"
+                        Width="200"
+                        Height="50"
+                        Content="Зарегистрировать">
+                        <Button.Effect>
+                            <DropShadowEffect ShadowDepth="5" Opacity="0.1" />
+                        </Button.Effect>
+                    </Button>
+                </StackPanel>
+                
+                <!-- Второй блок -->
+                <StackPanel
+                    Orientation="Vertical"
+                    Grid.Column="1">
+                    <Grid
+                        HorizontalAlignment="Stretch">
+                        <TextBlock 
+                            Text="Клиенты"
+                            FontSize="16"
+                            Margin="15" 
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Center">
+                        </TextBlock>
+
+                        <Button 
+                            x:Name="BtnCloseFrame"
+                            Margin="0,0,30,0"
+                            Height="30"
+                            Width="30"
+                            Content="X"
+                            Background="White"
+                            Foreground="Red"
+                            FontSize="20"
+                            Click="OnClickExit"
+                            HorizontalAlignment="Right">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="60" />
+                                </Style>
+                            </Button.Resources>
+                            <Button.Effect>
+                                <DropShadowEffect ShadowDepth="1" Opacity="0.1" />
+                            </Button.Effect>
+                        </Button>
                     </Grid>
                 </StackPanel>
-                <!-- Второй блок -->
-                <StackPanel Orientation="Vertical" Grid.Column="1">
-                    <TextBlock Text="Клиенты" Margin="15" 
-                               VerticalAlignment="Top" HorizontalAlignment="Center"/>
-                </StackPanel>
 
-                <Grid VerticalAlignment="Stretch" Margin="0,40,20,60" Grid.Column="1">
-                        <DataGrid>
-                            
-                        </DataGrid>
+                <Grid
+                    VerticalAlignment="Stretch"
+                    Margin="0,50,30,50"
+                    Grid.Column="1">
+                       <DataGrid
+                           Background="WhiteSmoke"
+                           BorderBrush="#606060">
+                       </DataGrid>
                  </Grid>
             </Grid>
+            
         </Border>
     </Grid>
 </Page>
