@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:MotoRandApplication.uix.frames.capabilities.shopman"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1200"
-      Title="Регистрация клиента">
+      Title="Регистрация клиента" 
+      Unloaded="Page_Unloaded">
 
     <Page.Resources>
         <!-- Ресурсы Label -->
@@ -19,6 +20,7 @@
             <Setter Property="Margin" Value="0,0,5,0" />
             <Setter Property="HorizontalAlignment" Value="Right" />
             <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="MaxLength" Value="20" />
         </Style>
         <!-- Ресурсы Button -->
         <Style TargetType="Button" BasedOn="{StaticResource StyleButtonOnForms}">
@@ -53,7 +55,7 @@
                             Content="Имя">
                         </Label>
                         <TextBox
-                            >
+                            x:Name="FieldName">
                             <TextBox.Effect>
                                 <DropShadowEffect ShadowDepth="2" Opacity="0.1" />
                             </TextBox.Effect>
@@ -65,7 +67,7 @@
                                 Content="Фамилия">
                             </Label>
                             <TextBox
-                                >
+                                x:Name="FieldFamily">
                             <TextBox.Effect>
                                 <DropShadowEffect ShadowDepth="2" Opacity="0.1" />
                             </TextBox.Effect>
@@ -77,7 +79,7 @@
                                 Content="Отчество">
                             </Label>
                             <TextBox
-                                >
+                                x:Name="FieldPatronymic">
                             <TextBox.Effect>
                                 <DropShadowEffect ShadowDepth="2" Opacity="0.1" />
                             </TextBox.Effect>
@@ -89,8 +91,8 @@
                             Content="Телефон">
                         </Label>
                         <TextBox
-                            MaxLength="12"
-                            >
+                            x:Name="FieldPhone"
+                            MaxLength="12">
                             <TextBox.Effect>
                                 <DropShadowEffect ShadowDepth="2" Opacity="0.1" />
                             </TextBox.Effect>
@@ -102,11 +104,13 @@
                         Margin="20"
                         Width="200"
                         Height="50"
+                        Click="OnClickRegistration"
                         Content="Зарегистрировать">
                         <Button.Effect>
                             <DropShadowEffect ShadowDepth="5" Opacity="0.1" />
                         </Button.Effect>
                     </Button>
+
                 </StackPanel>
                 
                 <!-- Второй блок -->
@@ -151,12 +155,51 @@
                     Margin="0,50,30,50"
                     Grid.Column="1">
                        <DataGrid
-                           Background="WhiteSmoke"
+                           Margin="20,5,0,0"
+                           Padding="3,7,5,5"
+                           AutoGenerateColumns="False"
+                           x:Name="CustomerDataGrid"
+                           Background="#FFA736"
                            BorderBrush="#606060">
-                       </DataGrid>
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="MinWidth" Value="100" />
+                                <Setter Property="Padding" Value="5" />
+                                <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                <Setter Property="FontSize" Value="15" />
+                            </Style>
+                            <Style TargetType="DataGridRowHeader">
+                                <Setter Property="Height" Value="30" />
+                                <Setter Property="Background" Value="#FFA736" />
+                                <Setter Property="Margin" Value="1" />
+                            </Style>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                                <Setter Property="FontSize" Value="17" />
+                            </Style>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Header="Имя"
+                                Binding="{Binding Name}" />
+                            <DataGridTextColumn
+                                Header="Фамилия"
+                                Binding="{Binding Family}"/>
+                            <DataGridTextColumn
+                                Header="Отчество"
+                                Binding="{Binding SecondName}"/>
+                            <DataGridTextColumn
+                                Header="Телефон"
+                                Width="*"
+                                Binding="{Binding Phone}"/>
+                        </DataGrid.Columns>
+                           
+                    </DataGrid>
                  </Grid>
             </Grid>
-            
         </Border>
     </Grid>
 </Page>

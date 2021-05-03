@@ -1,4 +1,5 @@
-﻿using MotoRandApplication.uix.frames.capabilities.shopman;
+﻿using MotoRandApplication.packages.uixmanagement.MenuIntefrace;
+using MotoRandApplication.uix.frames.capabilities.shopman;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ using System.Windows.Shapes;
 namespace MotoRandApplication.uix.frames.menu.shopman
 {
 
-    public partial class ShopmanMenu : Window
+    public partial class ShopmanMenu : Window, IMainMenuFunction
     {
         private Frame frame;
         private ShopmanMainMenu menu;
@@ -33,7 +34,7 @@ namespace MotoRandApplication.uix.frames.menu.shopman
             frame.Content = menu;
         }
 
-        private void MainMenuClick(object sender, MouseButtonEventArgs e)
+        public void MainMenuClick(object sender, MouseButtonEventArgs e)
         {
             if (frame.Content != menu)
             {
@@ -41,12 +42,12 @@ namespace MotoRandApplication.uix.frames.menu.shopman
             }
         }
 
-        private void ToolbarClick(object sender, MouseButtonEventArgs e)
+        public void ToolbarClick(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Ты кликнул на тул бар");
         }
 
-        private void EmployeeClick(object sender, MouseButtonEventArgs e)
+        public void EmployeeClick(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Ты кликнул на сотрудника");
         }

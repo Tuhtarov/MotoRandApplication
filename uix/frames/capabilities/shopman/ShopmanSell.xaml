@@ -5,118 +5,208 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MotoRandApplication.uix.frames.capabilities.shopman"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="ShopmanSell">
+      d:DesignHeight="600" d:DesignWidth="1200"
+      Title="Торговля">
 
     <Page.Resources>
-        <!-- Стили Label -->
-        <Style TargetType="Label">
-            <Setter Property="Margin" Value="15" />
-            <Setter Property="Padding" Value="0,10,0,0" />
-            <Setter Property="Height" Value="35" />
+        <!-- Ресурсы Label -->
+        <Style TargetType="Label" BasedOn="{StaticResource StyleLabelOnForms}">
+            <Setter Property="HorizontalAlignment" Value="Left" />
         </Style>
-        
-        <!-- Стили TextBox -->
-        <Style TargetType="TextBox">
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5" />
-                </Style>
-            </Style.Resources>
-            <Setter Property="Height" Value="35"/>
-            <Setter Property="Margin" Value="15,15,50,15"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <!-- Ресурсы TextBox -->
+        <Style TargetType="TextBox" BasedOn="{StaticResource DefaultTextBox}">
+            <Setter Property="Width" Value="240" />
+            <Setter Property="Margin" Value="0,0,5,0" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="MaxLength" Value="20" />
         </Style>
-        
-        <!-- Стили кнопок -->
-        <Style TargetType="Button">
-            <Style.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="12" />
-                </Style>
-            </Style.Resources>
-            <Setter Property="FontFamily" Value="Franklin Gothic Medium Cond" />
-            <Setter Property="Padding" Value="15,0,15,0" />
-            <Setter Property="Foreground" Value="#555555" />
-            <Setter Property="Margin" Value="0,0,20,0" />
-            <Setter Property="Height" Value="40" />
+        <!-- Ресурсы Button -->
+        <Style TargetType="Button" BasedOn="{StaticResource StyleButtonOnForms}">
         </Style>
     </Page.Resources>
 
     <Grid Background="White">
-        <Border Margin="40" CornerRadius="20" Background="White">
+        <Border
+            MaxHeight="700"
+            MaxWidth="1450"
+            Margin="40"
+            CornerRadius="30"
+            Background="White">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="20" Opacity="0.2" />
             </Border.Effect>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="320"></ColumnDefinition>
+                    <ColumnDefinition MaxWidth="380"></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
                 <!-- Первый блок -->
-                <StackPanel Grid.Column="0" Orientation="Vertical">
-                    <TextBlock Text="Зарегистрировать клиента" Margin="0,15,0,15"
-                           HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                    <Grid VerticalAlignment="Stretch">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
+                <StackPanel
+                    Grid.Column="0"
+                    Margin="10,50,10,50"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch">
 
-                        <!-- Первая половина первого блока -->
-                        <StackPanel Orientation="Vertical" Grid.Column="0">
-                            <Label>Имя</Label>
-                            <Label>Фамилия</Label>
-                            <Label>Отчество</Label>
-                            <Label>Телефон</Label>
-                        </StackPanel>
+                    <Grid Margin="0,0,5,15">
+                        <Label
+                            Content="Товар">
+                        </Label>
+                        <TextBox
+                            x:Name="FieldProduct">
+                            <TextBox.Effect>
+                                <DropShadowEffect ShadowDepth="2" Opacity="0.1" />
+                            </TextBox.Effect>
+                        </TextBox>
+                    </Grid>
 
-                        <!-- Вторая половина первого блока -->
-                        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="0,0,10,0">
-                            <TextBox x:Name="FieldName"></TextBox>
-                            <TextBox x:Name="FieldFamily"></TextBox>
-                            <TextBox x:Name="FieldPatronymic"></TextBox>
-                            <TextBox x:Name="FieldPhone"></TextBox>
-                        </StackPanel>
+                    <Grid Margin="0,0,5,15">
+                        <Label
+                                Content="Количество">
+                        </Label>
+                        <TextBox
+                                x:Name="FieldQty">
+                            <TextBox.Effect>
+                                <DropShadowEffect ShadowDepth="2" Opacity="0.1" />
+                            </TextBox.Effect>
+                        </TextBox>
+                    </Grid>
+
+                    <Grid Margin="0,0,5,15">
+                        <Label
+                                Content="Клиент*">
+                        </Label>
+                        <TextBox
+                                x:Name="FieldCustomer">
+                            <TextBox.Effect>
+                                <DropShadowEffect ShadowDepth="2" Opacity="0.1" />
+                            </TextBox.Effect>
+                        </TextBox>
+                    </Grid>
+                    
+                    <Grid>
+                        <Button
+                            HorizontalAlignment="Right"
+                            Margin="20"
+                            Width="150"
+                            Height="50"
+                            Content="Добавить">
+                            <Button.Effect>
+                                <DropShadowEffect ShadowDepth="5" Opacity="0.1" />
+                            </Button.Effect>
+                        </Button>
+
+                        <TextBlock 
+                            FontFamily="Franklin Gothic Book"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            Margin="20,0,0,0"
+                            FontSize="24">
+                            
+                        </TextBlock>
+                    </Grid>
+                    
+                </StackPanel>
+
+                <!-- Второй блок -->
+                <StackPanel
+                    Orientation="Vertical"
+                    Grid.Column="1">
+                    <Grid
+                        HorizontalAlignment="Stretch">
+                        <TextBlock 
+                            Text="Корзина"
+                            FontSize="16"
+                            Margin="15" 
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Center">
+                        </TextBlock>
+
+                        <Button 
+                            x:Name="BtnCloseFrame"
+                            Margin="0,0,30,0"
+                            Height="30"
+                            Width="30"
+                            Content="X"
+                            Background="White"
+                            Foreground="Red"
+                            FontSize="20"
+                            Click="OnClickExit"
+                            HorizontalAlignment="Right">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="60" />
+                                </Style>
+                            </Button.Resources>
+                            <Button.Effect>
+                                <DropShadowEffect ShadowDepth="1" Opacity="0.1" />
+                            </Button.Effect>
+                        </Button>
                     </Grid>
                 </StackPanel>
-                <!-- Второй блок -->
-                <StackPanel Orientation="Vertical" Grid.Column="1">
-                    <TextBlock Text="Клиенты" Margin="15" 
-                               VerticalAlignment="Top" HorizontalAlignment="Center"/>
-                </StackPanel>
 
-                <Grid VerticalAlignment="Stretch" Margin="0,40,20,60" Grid.Column="1">
-                    <DataGrid>
-
+                <Grid
+                    VerticalAlignment="Stretch"
+                    Margin="0,50,30,100"
+                    Grid.Column="1">
+                    <DataGrid
+                           Margin="20,5,0,0"
+                           Padding="3,7,5,5"
+                           AutoGenerateColumns="False"
+                           x:Name="CartDataGrid"
+                           Background="#FFA736"
+                           BorderBrush="#606060">
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="MinWidth" Value="100" />
+                                <Setter Property="Padding" Value="5" />
+                                <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                <Setter Property="FontSize" Value="15" />
+                            </Style>
+                            <Style TargetType="DataGridRowHeader">
+                                <Setter Property="Height" Value="30" />
+                                <Setter Property="Background" Value="#FFA736" />
+                                <Setter Property="Margin" Value="1" />
+                            </Style>
+                            <Style TargetType="DataGridRow">
+                                <Setter Property="VerticalAlignment" Value="Center" />
+                                <Setter Property="FontSize" Value="17" />
+                            </Style>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="10" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Header="Товар"
+                                Binding="{Binding Part}" />
+                            <DataGridTextColumn
+                                Header="Номер запчасти"
+                                Binding="{Binding IdPart}"/>
+                            <DataGridTextColumn
+                                Header="Количество"
+                                Binding="{Binding Qty}"/>
+                            <DataGridTextColumn
+                                Header="Стоимость (1шт)"
+                                Binding="{Binding Price}"/>
+                            <DataGridTextColumn
+                                Header="Общая стоимость"
+                                Width="*"
+                                Binding="{Binding TotalPrice}"/>
+                        </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
+                <TextBlock
+                    x:Name="TextTotalAmout"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,0,35"
+                    FontSize="22"
+                    Text="Общая стоимость = ">
+                </TextBlock>
             </Grid>
         </Border>
-
-        <DockPanel LastChildFill="False">
-            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="0,0,0,20">
-                <!--  -->
-                <Button Content="Отменить действие">
-                    <Button.Effect>
-                        <DropShadowEffect ShadowDepth="4" Opacity="0.2" />
-                    </Button.Effect>
-                </Button>
-                <!--  -->
-                <Button Content="Очистить корзину">
-                    <Button.Effect>
-                        <DropShadowEffect ShadowDepth="4" Opacity="0.2" />
-                    </Button.Effect>
-                </Button>
-                <!--  -->
-                <Button Content="Продажа" Background="#A3F59A" Margin="60,0,20,0" Padding="25,0,25,0">
-                    <Button.Effect>
-                        <DropShadowEffect ShadowDepth="4" Opacity="0.2" />
-                    </Button.Effect>
-                </Button>
-            </StackPanel>
-        </DockPanel>
     </Grid>
-
 </Page>

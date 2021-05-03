@@ -66,6 +66,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="packages\uimanagement\Watermarks.cs" />
+    <Compile Include="packages\uixmanagement\LoginManage\AuthorizationEmployee.cs" />
+    <Compile Include="packages\uixmanagement\LoginManage\IAuthorizationEmployee.cs" />
+    <Compile Include="packages\uixmanagement\MenuIntefrace\IMainMenuFunction.cs" />
     <Compile Include="uix\frames\capabilities\shopman\ShopmanMainMenu.xaml.cs">
       <DependentUpon>ShopmanMainMenu.xaml</DependentUpon>
     </Compile>
@@ -74,6 +77,12 @@
     </Compile>
     <Compile Include="uix\frames\capabilities\shopman\ShopmanSell.xaml.cs">
       <DependentUpon>ShopmanSell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="uix\frames\menu\admin\AdminMenu.xaml.cs">
+      <DependentUpon>AdminMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="uix\frames\menu\operatorE\OperatorMenu.xaml.cs">
+      <DependentUpon>OperatorMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="uix\frames\menu\shopman\ShopmanMenu.xaml.cs">
       <DependentUpon>ShopmanMenu.xaml</DependentUpon>
@@ -161,6 +170,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="uix\frames\menu\admin\AdminMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="uix\frames\menu\operatorE\OperatorMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="uix\frames\menu\shopman\ShopmanMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -214,9 +231,7 @@
     <Folder Include="packages\uixmanagement\OperatorManage\" />
     <Folder Include="packages\uixmanagement\ShopmanManage\" />
     <Folder Include="uix\frames\capabilities\admin\" />
-    <Folder Include="uix\frames\capabilities\operator\" />
-    <Folder Include="uix\frames\menu\admin\" />
-    <Folder Include="uix\frames\menu\operator\" />
+    <Folder Include="uix\frames\capabilities\operatorE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="database\Model1.Context.tt">

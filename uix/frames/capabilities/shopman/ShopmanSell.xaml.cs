@@ -21,5 +21,10 @@ namespace MotoRandApplication.uix.frames.capabilities.shopman
         {
             InitializeComponent();
         }
+
+        private void OnClickExit(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ShopmanMainMenu());
+        }
     }
 }

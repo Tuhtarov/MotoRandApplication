@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\App.xaml
-6769817792
+8-156124055
 2-1040716115
-28-217496985
+33-1009511798
 19-1306346096
-LoginWindow.xaml;MainWindow.xaml;uix\frames\capabilities\shopman\ShopmanMainMenu.xaml;uix\frames\capabilities\shopman\ShopmanRegistrationCustomer.xaml;uix\frames\capabilities\shopman\ShopmanSell.xaml;uix\frames\menu\shopman\ShopmanMenu.xaml;
+LoginWindow.xaml;MainWindow.xaml;uix\frames\capabilities\shopman\ShopmanMainMenu.xaml;uix\frames\capabilities\shopman\ShopmanRegistrationCustomer.xaml;uix\frames\capabilities\shopman\ShopmanSell.xaml;uix\frames\menu\admin\AdminMenu.xaml;uix\frames\menu\operatorE\OperatorMenu.xaml;uix\frames\menu\shopman\ShopmanMenu.xaml;
 
-True
+False
 

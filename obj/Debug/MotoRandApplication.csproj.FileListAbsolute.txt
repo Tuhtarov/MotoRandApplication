@@ -31,3 +31,7 @@ C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\uix\frames\ca
 C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\uix\frames\capabilities\shopman\ShopmanRegistrationCustomer.baml
 C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\uix\frames\capabilities\shopman\ShopmanSell.g.cs
 C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\uix\frames\capabilities\shopman\ShopmanSell.baml
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\uix\frames\menu\operatorE\OperatorMenu.g.cs
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\uix\frames\menu\operatorE\OperatorMenu.baml
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\uix\frames\menu\admin\AdminMenu.g.cs
+C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\obj\Debug\uix\frames\menu\admin\AdminMenu.baml
