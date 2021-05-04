@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MotoRandApplication.uix.frames.menu.operatorE"
         mc:Ignorable="d"
+        Icon="C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\res\images\icons\iconStore.png"
         Title="Рабочий стол" 
         MinHeight="650"
         MinWidth="850">

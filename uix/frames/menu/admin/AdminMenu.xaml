@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MotoRandApplication.uix.frames.menu.admin"
         mc:Ignorable="d"
-        Title="Рабочий стол" 
+        Icon="C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\res\images\icons\profileIcon.png"
+        Title="Администрирование" 
         MinHeight="650"
-        MinWidth="850">
+        MinWidth="900">
     
     <Grid
         HorizontalAlignment="Stretch"
@@ -22,7 +23,7 @@
         <Grid
             Grid.Row="0"
             HorizontalAlignment="Stretch"
-            Background="#FF3F3F46">
+            Background="#89BC87">
 
             <StackPanel
                 Orientation="Horizontal"

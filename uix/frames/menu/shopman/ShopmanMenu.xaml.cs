@@ -55,7 +55,7 @@ namespace MotoRandApplication.uix.frames.menu.shopman
         private void InitFrames()
         {
             menu = new ShopmanMainMenu();
-            registration = new ShopmanRegistrationCustomer();
+            //registration = new ShopmanRegistrationCustomer(this);
             sell = new ShopmanSell();
         }
     }

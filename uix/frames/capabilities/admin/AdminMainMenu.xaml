@@ -1,0 +1,171 @@
+﻿<Page x:Class="MotoRandApplication.uix.frames.capabilities.admin.AdminMainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MotoRandApplication.uix.frames.capabilities.admin"
+      mc:Ignorable="d" 
+      d:DesignHeight="450"
+      d:DesignWidth="900"
+      Title="Главное меню администрирования">
+
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!-- Раздел управления торговлей -->
+        <StackPanel
+            Margin="20"
+            Orientation="Vertical"   
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Grid.Column="0"
+            Grid.Row="0">
+
+            <TextBlock
+                Text="Управление торговлей"
+                Style="{StaticResource MainMenuTextHeader}"
+                Margin="10,10,0,10">
+            </TextBlock>
+
+            <TextBlock
+                Text="Управление списком поставщиков"
+                MouseLeftButtonUp="ClickOnManageProviders"
+                Style="{StaticResource MainMenuTextLight}"
+                >
+            </TextBlock>
+
+            <TextBlock
+                Text="Управление списком запчастей"
+                Style="{StaticResource MainMenuTextLight}"
+                MouseLeftButtonUp="ClickOnManageParts">
+            </TextBlock>
+
+            <TextBlock
+                Text="Управление списком мотоциклов"
+                Style="{StaticResource MainMenuTextLight}"
+                MouseLeftButtonUp="ClickOnManageMotorcycles">
+            </TextBlock>
+
+            <TextBlock
+                Text="Управление списком товаров"
+                Style="{StaticResource MainMenuTextLight}"
+                MouseLeftButtonUp="ClickOnManageProducts">
+            </TextBlock>
+        </StackPanel>
+
+        <!-- Раздел управления сотрудниками -->
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="20"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Vertical">
+            <TextBlock
+                Text="Управление сотрудниками"
+                Margin="10,10,0,10"
+                Style="{StaticResource MainMenuTextHeader}">
+            </TextBlock>
+
+            <TextBlock
+                x:Name="TextRegistrationUsers"
+                Text="Регистрация пользователей"
+                Cursor="Hand"
+                Style="{StaticResource MainMenuTextLight}">
+            </TextBlock>
+
+            <TextBlock
+                x:Name="TextRegistrationEmployee"
+                Text="Регистрация сотрудников"
+                Cursor="Hand"
+                Style="{StaticResource MainMenuTextLight}">
+            </TextBlock>
+        </StackPanel>
+
+        <!-- Раздел отчётов -->
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="20"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Vertical">
+            <TextBlock
+                Text="Отчёты"
+                Margin="10,10,0,10"
+                Style="{StaticResource MainMenuTextHeader}">
+            </TextBlock>
+
+            <TextBlock
+                x:Name="InfoSellersOnCurrentDay"
+                Text="Просмотреть продажи за сегодня"
+                Cursor="Hand"
+                Style="{StaticResource MainMenuTextLight}">
+            </TextBlock>
+
+            <TextBlock
+                x:Name="InfoSellersOnCurrentWeek"
+                Text="Просмотреть продажи за неделю"
+                Cursor="Hand"
+                Style="{StaticResource MainMenuTextLight}">
+            </TextBlock>
+
+            <TextBlock
+                x:Name="InfoSellersOnCurrnetMonth"
+                Text="Просмотреть продажи за месяц"
+                Cursor="Hand"
+                Style="{StaticResource MainMenuTextLight}">
+            </TextBlock>
+
+            <TextBlock
+                x:Name="InfoListOfTopProducts"
+                Text="Просмотреть список самых продаваемых товаров"
+                Cursor="Hand"
+                Style="{StaticResource MainMenuTextLight}">
+            </TextBlock>
+        </StackPanel>
+
+        <!-- Раздел разное -->
+        <StackPanel
+            Margin="20" 
+            Orientation="Vertical"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Grid.Column="0"
+            Grid.Row="1">
+
+            <TextBlock
+                Text="Разное"
+                Style="{StaticResource MainMenuTextHeader}"
+                Margin="10,10,0,10">
+            </TextBlock>
+
+            <TextBlock
+                x:Name="TextHelpInfo"
+                Text="Справочная информация"
+                Cursor="Hand"
+                MouseLeftButtonUp="OnClickHelpInfo"
+                Style="{StaticResource MainMenuTextLight}">
+            </TextBlock>
+            
+            <TextBlock
+                x:Name="TextCustomersData"
+                Text="Клиентская база"
+                Cursor="Hand"
+                MouseLeftButtonUp="OnClickCustomersData"
+                Style="{StaticResource MainMenuTextLight}">
+            </TextBlock>
+            
+        </StackPanel>
+
+    </Grid>
+</Page>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MotoRandApplication.packages.uixmanagement.FrameInterface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,14 @@ using System.Windows.Shapes;
 
 namespace MotoRandApplication.uix.frames.capabilities.shopman
 {
-    public partial class ShopmanSell : Page
+    public partial class ShopmanSell : Page, IFrameFunction
     {
         public ShopmanSell()
         {
             InitializeComponent();
         }
 
-        private void OnClickExit(object sender, RoutedEventArgs e)
+        public void OnClickExit(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ShopmanMainMenu());
         }

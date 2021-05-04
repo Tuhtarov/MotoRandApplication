@@ -1,4 +1,5 @@
 ﻿using MotoRandApplication.packages.uixmanagement.MenuIntefrace;
+using MotoRandApplication.uix.frames.capabilities.admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,14 @@ namespace MotoRandApplication.uix.frames.menu.admin
     public partial class AdminMenu : Window, IMainMenuFunction
     {
         private string employee;
+        private AdminMainMenu mainMenu; 
         public AdminMenu(string Employee)
         {
             InitializeComponent();
             employee = Employee;
             AdminTextEmployee.Content = employee;
+            mainMenu = new AdminMainMenu();
+            AdminMenuFrame.Content = mainMenu;
         }
 
         public void EmployeeClick(object sender, MouseButtonEventArgs e)
@@ -36,7 +40,10 @@ namespace MotoRandApplication.uix.frames.menu.admin
 
         public void MainMenuClick(object sender, MouseButtonEventArgs e)
         {
-
+            if(AdminMenuFrame.Content != mainMenu)
+            {
+                AdminMenuFrame.Content = mainMenu;
+            }
         }
 
         public void ToolbarClick(object sender, MouseButtonEventArgs e)

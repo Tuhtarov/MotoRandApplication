@@ -46,7 +46,7 @@ namespace MotoRandApplication.uix.frames.capabilities.shopman
 
         private void InitFrames()
         {
-            registration = new ShopmanRegistrationCustomer();
+            registration = new ShopmanRegistrationCustomer(this);
             sell = new ShopmanSell();
         }
 
