@@ -59,6 +59,16 @@ namespace MotoRandApplication.uix.frames.capabilities.admin
             viewModel.GoOnDataCustomers();
         }
 
+        private void ClickOnManageAccounts(object sender, MouseButtonEventArgs e)
+        {
+            viewModel.GoOnRegistrationUsers();
+        }
+
+        private void ClickOnManageEmployee(object sender, MouseButtonEventArgs e)
+        {
+            viewModel.GoOnRegistrationEmployee();
+        }
+
         private void InDevelopment()
         {
             MessageBox.Show("В разработке");

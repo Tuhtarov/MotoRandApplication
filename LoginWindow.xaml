@@ -11,7 +11,7 @@
         Loaded="LoadLoginWindow" 
         Icon="res/images/inDoorIcon.jpg" 
         ResizeMode="NoResize"
-        WindowStyle="SingleBorderWindow">
+        WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen">
     
     <Grid>
 

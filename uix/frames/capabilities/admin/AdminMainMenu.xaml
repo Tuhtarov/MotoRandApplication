@@ -78,6 +78,7 @@
 
             <TextBlock
                 x:Name="TextRegistrationUsers"
+                MouseLeftButtonDown="ClickOnManageAccounts"
                 Text="Регистрация пользователей"
                 Cursor="Hand"
                 Style="{StaticResource MainMenuTextLight}">
@@ -85,6 +86,7 @@
 
             <TextBlock
                 x:Name="TextRegistrationEmployee"
+                MouseLeftButtonDown="ClickOnManageEmployee"
                 Text="Регистрация сотрудников"
                 Cursor="Hand"
                 Style="{StaticResource MainMenuTextLight}">

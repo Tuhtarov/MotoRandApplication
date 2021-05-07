@@ -42,8 +42,6 @@ namespace MotoRandApplication
             InitUtils();
         }
 
-      
-
         private void LoadLoginWindow(object sender, RoutedEventArgs e)
         {
             motoRandConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["MotoRandNewConnect"].ConnectionString);
@@ -54,12 +52,7 @@ namespace MotoRandApplication
 
         private void clickSignIn(object sender, RoutedEventArgs e)
         {
-            /*
-            var acc = contextDB.Accounts;
-            var emp = contextDB.Employees;
-            var query = from Accounts in acc where Accounts.Login == loginField.Text select Accounts.IdAccount;
-            var queryTwo = from Employees in emp where Employees.IdAccount == query.FirstOrDefault() select Employees.IdEmployee; */
-
+          
             if(loginField.Text != "" && passwordField.Text != "")
             {
                 var resultValid = authorization.CheckValidAuthorization(loginField.Text, passwordField.Text, CBchooseRole.Text);
@@ -83,24 +76,6 @@ namespace MotoRandApplication
                 {
                     MessageBox.Show("Неправильный логин или пароль");
                 }
-
-                /*
-                if(query.FirstOrDefault() != 0){
-                    string value = $"{contextDB.Employees.Find(queryTwo.FirstOrDefault()).Name}" +
-                        $" {contextDB.Employees.Find(queryTwo.FirstOrDefault()).Family}" +
-                        $" {contextDB.Employees.Find(queryTwo.FirstOrDefault()).SecondName}";
-
-                    shopman = new ShopmanMenu(value);
-                    this.Close();
-                    shopman.Show();
-
-                    var accaunt = contextDB.Accounts.Where(a => a.Login == loginField.Text && a.Password == passwordField.Text);
-                    var ack = accaunt as Employees;
-                    
-
-                    Employees employee = (Employees)contextDB.Employees.Where(em => em.IdAccount == accaunt.IdAccount);
-                    MessageBox.Show(employee.Name + " " + employee.Family);
-                */
 
             } else
             {

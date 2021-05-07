@@ -23,10 +23,16 @@ namespace MotoRandApplication.packages.AdminViewModel
         private OperatorManageParts manageParts;
         // shopman capabilities
         private ShopmanRegistrationCustomer manageRegistration;
+        // admin capabilities
+        private AdminRegistrationAccounts manageAccount;
+        private AdminRegistrationEmployee manageEmployee;
+
 
         public AdminViewModel(Page page)
         {
             pageContext = page;
+            manageEmployee = new AdminRegistrationEmployee(pageContext);
+            manageAccount = new AdminRegistrationAccounts(pageContext);
             manageMoto = new OperatorManageMotorcycles(pageContext);
             manageParts = new OperatorManageParts(pageContext);
             manageStore = new OperatorManageStore(pageContext);
@@ -58,10 +64,12 @@ namespace MotoRandApplication.packages.AdminViewModel
 
         public void GoOnRegistrationUsers()
         {
+            GoOn(manageAccount);
         }
 
         public void GoOnRegistrationEmployee()
         {
+            GoOn(manageEmployee);
         }
 
 

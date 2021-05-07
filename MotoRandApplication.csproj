@@ -90,6 +90,12 @@
     <Compile Include="uix\frames\capabilities\admin\AdminMainMenu.xaml.cs">
       <DependentUpon>AdminMainMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="uix\frames\capabilities\admin\AdminRegistrationAccounts.xaml.cs">
+      <DependentUpon>AdminRegistrationAccounts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="uix\frames\capabilities\admin\AdminRegistrationEmployee.xaml.cs">
+      <DependentUpon>AdminRegistrationEmployee.xaml</DependentUpon>
+    </Compile>
     <Compile Include="uix\frames\capabilities\operatorE\OperatorMainMenu.xaml.cs">
       <DependentUpon>OperatorMainMenu.xaml</DependentUpon>
     </Compile>
@@ -195,6 +201,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="uix\frames\capabilities\admin\AdminMainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="uix\frames\capabilities\admin\AdminRegistrationAccounts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="uix\frames\capabilities\admin\AdminRegistrationEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
