@@ -1,4 +1,5 @@
-﻿using MotoRandApplication.packages.uixmanagement.MenuIntefrace;
+﻿using MotoRandApplication.packages.AdminViewModel;
+using MotoRandApplication.packages.uimanagement;
 using MotoRandApplication.uix.frames.capabilities.shopman;
 using System;
 using System.Collections.Generic;
@@ -17,21 +18,23 @@ using System.Windows.Shapes;
 namespace MotoRandApplication.uix.frames.menu.shopman
 {
 
-    public partial class ShopmanMenu : Window, IMainMenuFunction
+    public partial class ShopmanMenu : Window
     {
         private Frame frame;
         private ShopmanMainMenu menu;
-        private ShopmanRegistrationCustomer registration;
-        private ShopmanSell sell;
+        private AdminViewModel navigationModel;
+        private SideBarAnimation sideBarAnimation;
 
 
         public ShopmanMenu(String employee)
         {
             InitializeComponent();
-            ShopManTextEmployee.Content = employee;
+            ShopmanTextEmployee.Content = employee;
             frame = ShopmanMenuFrame;
+            sideBarAnimation = new SideBarAnimation(sideMenu, textMenu);
             InitFrames();
             frame.Content = menu;
+            navigationModel = new AdminViewModel(menu);
         }
 
         public void MainMenuClick(object sender, MouseButtonEventArgs e)
@@ -42,21 +45,30 @@ namespace MotoRandApplication.uix.frames.menu.shopman
             }
         }
 
-        public void ToolbarClick(object sender, MouseButtonEventArgs e)
+        public void ClickStore(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Ты кликнул на тул бар");
+            ShopmanMenuFrame.Content = navigationModel.manageSell;
         }
-
-        public void EmployeeClick(object sender, MouseButtonEventArgs e)
+        public void ClickCustomerRegistration(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Ты кликнул на сотрудника");
+            ShopmanMenuFrame.Content = navigationModel.manageRegistration;
         }
 
         private void InitFrames()
         {
             menu = new ShopmanMainMenu();
-            //registration = new ShopmanRegistrationCustomer(this);
-            sell = new ShopmanSell();
+        }
+
+        private void ClickOnSideBar(object sender, RoutedEventArgs e)
+        {
+            sideBarAnimation.SideStart();
+        }
+
+        private void BtnLeaveSystem_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
         }
     }
 }

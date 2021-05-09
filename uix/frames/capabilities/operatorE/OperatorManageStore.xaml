@@ -113,7 +113,7 @@
                     <Grid
                         HorizontalAlignment="Stretch">
                         <TextBlock 
-                            Text="Список товаров"
+                            Text="Товары"
                             FontSize="16"
                             Margin="15" 
                             VerticalAlignment="Top"

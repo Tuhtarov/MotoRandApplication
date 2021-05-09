@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MotoRandApplication.packages.AdminViewModel;
 using MotoRandApplication.uix.frames.menu.shopman;
 
 namespace MotoRandApplication.uix.frames.capabilities.shopman
@@ -19,35 +20,27 @@ namespace MotoRandApplication.uix.frames.capabilities.shopman
 
     public partial class ShopmanMainMenu : Page
     {
-        private ShopmanRegistrationCustomer registration;
-        private ShopmanSell sell;
-
+        private AdminViewModel navigationModel;
         public ShopmanMainMenu()
         {
             InitializeComponent();
-            InitFrames();
+            navigationModel = new AdminViewModel(this);
         }
 
         private void OnClickSell(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(sell);
+            NavigationService.Navigate(navigationModel.manageSell);
         }
 
         private void OnClickRegistration(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(registration);
+            navigationModel.GoOnDataCustomers();
         }
 
         private void OnClickHelpInfo(object sender, MouseButtonEventArgs e)
         {
             //NavigationService.Navigate();
             MessageBox.Show("В разработке, строка кода 44, класс MainMenu");
-        }
-
-        private void InitFrames()
-        {
-            registration = new ShopmanRegistrationCustomer(this);
-            sell = new ShopmanSell();
         }
 
     }

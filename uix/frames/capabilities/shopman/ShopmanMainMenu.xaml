@@ -17,7 +17,7 @@
         
         <!-- Раздел главное -->
         <StackPanel
-            Margin="20"
+            Margin="60,60,0,0"
             Orientation="Vertical"   
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
@@ -45,7 +45,7 @@
         
         <!-- Раздел разное -->
         <StackPanel
-            Margin="20" 
+            Margin="60,60,0,0"
             Orientation="Vertical"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"

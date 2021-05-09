@@ -7,40 +7,25 @@
         mc:Ignorable="d"
         Icon="C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\res\images\icons\iconStore.png"
         Title="Рабочий стол"
-        
         MinHeight="650"
         MinWidth="850">
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="35"></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
+    <Grid
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch">
+
+        <!-- Фрейм -->
+        <Frame
+            x:Name="ShopmanMenuFrame"
+            Background="LightGray"
+            NavigationUIVisibility="Hidden">
+        </Frame>
 
         <!-- Тулбар -->
-        <Grid Grid.Row="0" HorizontalAlignment="Stretch" Background="#FFED9C4A">
-
-            <StackPanel
-                Orientation="Horizontal"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Center">
-
-                <Image 
-                    Source="C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\res\images\icons\barIcon.png" 
-                    Stretch="Fill"
-                    StretchDirection="DownOnly"
-                    Cursor="Hand"
-                    MouseLeftButtonUp="ToolbarClick"
-                    Height="20" Width="20" Margin="10,0,10,0">
-                </Image>
-
-                <Label 
-                    Content="Главное меню"
-                    Style="{StaticResource MainMenuToolBarLabel}"
-                    MouseLeftButtonUp="MainMenuClick">
-                </Label>
-
-            </StackPanel>
+        <Grid
+            VerticalAlignment="Top"
+            Height="50"
+            HorizontalAlignment="Stretch"
+            Background="#FFED9C4A">
 
             <StackPanel 
                 Orientation="Horizontal"
@@ -48,11 +33,10 @@
                 VerticalAlignment="Center">
 
                 <Label
-                    x:Name="ShopManTextEmployee" 
+                    x:Name="ShopmanTextEmployee" 
                     Content="Имя Фамилия" 
                     Style="{StaticResource MainMenuToolBarLabel}"
-                    VerticalAlignment="Center"
-                    MouseLeftButtonDown="EmployeeClick">
+                    VerticalAlignment="Center">
                 </Label>
 
                 <Image
@@ -60,22 +44,144 @@
                     Stretch="Fill"
                     StretchDirection="DownOnly"
                     VerticalAlignment="Center"
-                    Cursor="Hand"
                     Height="15"
                     Width="15"
                     Margin="10">
                 </Image>
-
             </StackPanel>
         </Grid>
 
-        <!-- Фрейм -->
-        <Frame
-            Name="ShopmanMenuFrame"
-            Grid.Row="1"
-            Grid.ColumnSpan="2"
-            Background="LightGray"
-            NavigationUIVisibility="Hidden">
-        </Frame>
+        <!-- Сайд меню -->
+        <Grid
+            x:Name="sideMenu"
+            Width="200"
+            HorizontalAlignment="Left">
+
+            <Grid.Effect>
+                <DropShadowEffect
+                    Opacity="0.2"
+                    BlurRadius="20"
+                    ShadowDepth="2"/>
+            </Grid.Effect>
+
+            <StackPanel
+                Orientation="Vertical"
+                Background="White">
+
+                <Grid
+                    VerticalAlignment="Top"
+                    Height="50"
+                    Background="#FFED9C4A">
+                    <TextBlock
+                        x:Name="textMenu"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        FontSize="15"
+                        Foreground="White"
+                        Text="Меню"/>
+                    <Button
+                        Click="ClickOnSideBar"
+                        HorizontalAlignment="Right"
+                        Margin="0 0 6 0"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Height="30"
+                        Width="35">
+                        <Image 
+                            Source="C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\res\images\icons\barIcon.png"/>
+                    </Button>
+                </Grid>
+
+                <ListView
+                    Margin="5 10 0 0"
+                    HorizontalAlignment="Left"
+                    BorderBrush="Transparent"
+                    Width="auto"
+                    FontSize="15"
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListViewItem
+                        Margin="0 10 0 0"
+                        Focusable="False"
+                        Cursor="Hand">
+                        <StackPanel
+                            Orientation="Horizontal">
+                            <Image 
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Height="28"
+                                MouseLeftButtonDown="MainMenuClick"
+                                Source="C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\res\images\icons\desktop.png"/>
+                            <TextBlock 
+                                Margin="15 0 0 0"
+                                MouseLeftButtonDown="MainMenuClick"
+                                Text="Рабочий стол"
+                                VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem
+                        Margin="0 10 0 0"
+                        Focusable="False"
+                        Cursor="Hand">
+                        <StackPanel
+                            Orientation="Horizontal">
+                            <Image 
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Height="25"
+                                Cursor="Hand"
+                                MouseLeftButtonDown="ClickStore"
+                                Source="C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\res\images\iconsOperator\storeIcon.png"/>
+                            <TextBlock 
+                                Margin="15 0 0 0"
+                                Text="Продажа"
+                                MouseLeftButtonDown="ClickStore"
+                                Cursor="Hand"
+                                VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+
+                    <ListViewItem
+                        Margin="0 10 0 0"
+                        Focusable="False"
+                        Cursor="Hand">
+                        <StackPanel
+                            Orientation="Horizontal">
+                            <Image 
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Height="40"
+                                MouseLeftButtonDown="ClickCustomerRegistration"
+                                Cursor="Hand"
+                                Source="C:\Users\tuhtarov\Desktop\projectsVS\MotoRandApplication\res\images\icons\customer.png"/>
+                            <TextBlock 
+                                Margin="15 0 0 0"
+                                Cursor="Hand"
+                                MouseLeftButtonDown="ClickCustomerRegistration"
+                                Text="Клиенты"
+                                VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+
+            <Grid
+                Width="200"
+                VerticalAlignment="Bottom">
+                <Button
+                    HorizontalAlignment="Right"
+                    x:Name="BtnLeaveSystem"
+                    Margin="0,0,10,10"
+                    Height="35"
+                    Width="70"
+                    FontSize="15"
+                    BorderBrush="Transparent"
+                    Background="#FFFF7F7F"
+                    Style="{StaticResource StyleButtonOnForms}"
+                    Click="BtnLeaveSystem_Click"
+                    Content="Выход">
+                </Button>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

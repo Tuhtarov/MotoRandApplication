@@ -1,4 +1,5 @@
-﻿using MotoRandApplication.packages.uixmanagement.MenuIntefrace;
+﻿using MotoRandApplication.packages.AdminViewModel;
+using MotoRandApplication.packages.uimanagement;
 using MotoRandApplication.uix.frames.capabilities.operatorE;
 using System;
 using System.Collections.Generic;
@@ -20,23 +21,21 @@ namespace MotoRandApplication.uix.frames.menu.operatorE
     /// <summary>
     /// Логика взаимодействия для OperatorMenu.xaml
     /// </summary>
-    public partial class OperatorMenu : Window, IMainMenuFunction
+    public partial class OperatorMenu : Window
     {
-        private string employee;
         private OperatorMainMenu mainMenu;
+        private SideBarAnimation sideBarAnimation;
+        private AdminViewModel navigationModel;
         public OperatorMenu(string Employee)
         {
             InitializeComponent();
-            employee = Employee;
-            OperatorTextEmployee.Content = employee;
+            OperatorTextEmployee.Content = Employee;
             mainMenu = new OperatorMainMenu();
+            navigationModel = new AdminViewModel(mainMenu);
+            sideBarAnimation = new SideBarAnimation(sideMenu, textMenu);
+
+
             OperatorMenuFrame.Content = mainMenu;
-        }
-
-        public void EmployeeClick(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("Ты кликнул на сотрудника");
-
         }
 
         public void MainMenuClick(object sender, MouseButtonEventArgs e)
@@ -47,9 +46,36 @@ namespace MotoRandApplication.uix.frames.menu.operatorE
             }
         }
 
-        public void ToolbarClick(object sender, MouseButtonEventArgs e)
+        private void ClickOnSideBar(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Ты кликнул на тул бар");
+            sideBarAnimation.SideStart();
+        }
+
+        private void ClickStore(object sender, MouseButtonEventArgs e)
+        {
+            OperatorMenuFrame.Content = navigationModel.manageStore;
+        }
+
+        private void ClickProviders(object sender, MouseButtonEventArgs e)
+        {
+            OperatorMenuFrame.Content = navigationModel.manageProviders;
+        }
+
+        private void ClickMotorcycle(object sender, MouseButtonEventArgs e)
+        {
+            OperatorMenuFrame.Content = navigationModel.manageMoto;
+        }
+
+        private void ClickWarehouse(object sender, MouseButtonEventArgs e)
+        {
+            OperatorMenuFrame.Content = navigationModel.manageParts;
+        }
+
+        private void BtnLeaveSystem_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
         }
     }
 }

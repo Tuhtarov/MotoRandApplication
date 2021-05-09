@@ -7,9 +7,12 @@
       mc:Ignorable="d" 
       d:DesignHeight="450"
       d:DesignWidth="900"
+      MinHeight="500"
+      MinWidth="1000"
       Title="Главное меню администрирования">
 
-    <Grid Background="White">
+    <Grid
+        Background="White">
 
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -23,10 +26,10 @@
 
         <!-- Раздел управления торговлей -->
         <StackPanel
-            Margin="20"
+            Margin="60,60,0,0"
+            HorizontalAlignment="left"
+            VerticalAlignment="top"
             Orientation="Vertical"   
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
             Grid.Column="0"
             Grid.Row="0">
 
@@ -64,11 +67,11 @@
 
         <!-- Раздел управления сотрудниками -->
         <StackPanel
+            Margin="60,60,0,0"
+            HorizontalAlignment="left"
+            VerticalAlignment="top"
             Grid.Row="0"
             Grid.Column="1"
-            Margin="20"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
             Orientation="Vertical">
             <TextBlock
                 Text="Управление сотрудниками"
@@ -95,11 +98,11 @@
 
         <!-- Раздел отчётов -->
         <StackPanel
+            Margin="60,60,0,0"
+            HorizontalAlignment="left"
+            VerticalAlignment="top"
             Grid.Row="1"
             Grid.Column="1"
-            Margin="20"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
             Orientation="Vertical">
             <TextBlock
                 Text="Отчёты"
@@ -138,10 +141,10 @@
 
         <!-- Раздел разное -->
         <StackPanel
-            Margin="20" 
+            Margin="60,60,0,0"
+            HorizontalAlignment="left"
+            VerticalAlignment="top"
             Orientation="Vertical"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
             Grid.Column="0"
             Grid.Row="1">
 

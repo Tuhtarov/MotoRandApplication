@@ -18,14 +18,17 @@ namespace MotoRandApplication.uix.frames.capabilities.shopman
 {
     public partial class ShopmanSell : Page, IFrameFunction
     {
-        public ShopmanSell()
+        private Page page;
+
+        public ShopmanSell(Page page)
         {
             InitializeComponent();
+            this.page = page;
         }
 
         public void OnClickExit(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new ShopmanMainMenu());
+            NavigationService.Navigate(page);
         }
     }
 }

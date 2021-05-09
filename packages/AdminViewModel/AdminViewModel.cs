@@ -15,18 +15,21 @@ namespace MotoRandApplication.packages.AdminViewModel
 {
     class AdminViewModel : INavigateFrames
     {
-        public Page pageContext { get; }
-        // operator capabilities
-        private OperatorManageMotorcycles manageMoto;
-        private OperatorManageProviders manageProviders;
-        private OperatorManageStore manageStore;
-        private OperatorManageParts manageParts;
-        // shopman capabilities
-        private ShopmanRegistrationCustomer manageRegistration;
-        // admin capabilities
-        private AdminRegistrationAccounts manageAccount;
-        private AdminRegistrationEmployee manageEmployee;
+        public Page pageContext;
 
+        // operator capabilities
+        public OperatorManageMotorcycles manageMoto;
+        public OperatorManageProviders manageProviders;
+        public OperatorManageStore manageStore;
+        public OperatorManageParts manageParts;
+
+        // shopman capabilities
+        public ShopmanRegistrationCustomer manageRegistration;
+        public ShopmanSell manageSell;
+
+        // admin capabilities
+        public AdminRegistrationAccounts manageAccount;
+        public AdminRegistrationEmployee manageEmployee;
 
         public AdminViewModel(Page page)
         {
@@ -37,7 +40,8 @@ namespace MotoRandApplication.packages.AdminViewModel
             manageParts = new OperatorManageParts(pageContext);
             manageStore = new OperatorManageStore(pageContext);
             manageProviders = new OperatorManageProviders(pageContext);
-            manageRegistration = new ShopmanRegistrationCustomer(pageContext); 
+            manageRegistration = new ShopmanRegistrationCustomer(pageContext);
+            manageSell = new ShopmanSell(pageContext);
         }
 
         public void GoOnDataProviders()

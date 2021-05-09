@@ -1,4 +1,5 @@
-﻿using MotoRandApplication.packages.uixmanagement.MenuIntefrace;
+﻿using MotoRandApplication.packages.AdminViewModel;
+using MotoRandApplication.packages.uimanagement;
 using MotoRandApplication.uix.frames.capabilities.admin;
 using System;
 using System.Collections.Generic;
@@ -19,36 +20,53 @@ namespace MotoRandApplication.uix.frames.menu.admin
     /// <summary>
     /// Логика взаимодействия для AdminMenu.xaml
     /// </summary>
-    public partial class AdminMenu : Window, IMainMenuFunction
+    public partial class AdminMenu : Window
     {
-        private string employee;
-        private AdminMainMenu mainMenu; 
+        private SideBarAnimation sideBarAnimation;
+        private AdminMainMenu mainMenu;
+        private AdminViewModel viewModel;
         public AdminMenu(string Employee)
         {
             InitializeComponent();
-            employee = Employee;
-            AdminTextEmployee.Content = employee;
             mainMenu = new AdminMainMenu();
+            viewModel = new AdminViewModel(mainMenu);
+            AdminTextEmployee.Content = Employee;
             AdminMenuFrame.Content = mainMenu;
+
+
+            sideBarAnimation = new SideBarAnimation(sideMenu, textMenu);
         }
 
-        public void EmployeeClick(object sender, MouseButtonEventArgs e)
+        private void ClickOnSideBar(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Ты кликнул на сотрудника");
-
+            sideBarAnimation.SideStart();
         }
 
-        public void MainMenuClick(object sender, MouseButtonEventArgs e)
+        private void ClickDesktop(object sender, MouseButtonEventArgs e)
         {
-            if(AdminMenuFrame.Content != mainMenu)
-            {
-                AdminMenuFrame.Content = mainMenu;
-            }
+            AdminMenuFrame.Content = viewModel.pageContext;
         }
 
-        public void ToolbarClick(object sender, MouseButtonEventArgs e)
+        private void ClickAccounts(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Ты кликнул на тул бар");
+            AdminMenuFrame.Content = viewModel.manageAccount;
+        }
+
+        private void ClickEmployees(object sender, MouseButtonEventArgs e)
+        {
+            AdminMenuFrame.Content = viewModel.manageEmployee;
+        }
+
+        private void ClickCustomer(object sender, MouseButtonEventArgs e)
+        {
+            AdminMenuFrame.Content = viewModel.manageRegistration;
+        }
+
+        private void BtnLeaveSystem_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
         }
     }
 }

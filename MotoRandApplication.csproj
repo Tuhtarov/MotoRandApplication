@@ -82,11 +82,11 @@
     </ApplicationDefinition>
     <Compile Include="packages\AdminViewModel\AdminViewModel.cs" />
     <Compile Include="packages\AdminViewModel\IAdminPresentor\INavigateFrames.cs" />
+    <Compile Include="packages\uimanagement\SideBarAnimation.cs" />
     <Compile Include="packages\uimanagement\Watermarks.cs" />
     <Compile Include="packages\uixmanagement\FrameInterface\IFrameFunction.cs" />
     <Compile Include="packages\uixmanagement\LoginManage\AuthorizationEmployee.cs" />
     <Compile Include="packages\uixmanagement\LoginManage\IAuthorizationEmployee.cs" />
-    <Compile Include="packages\uixmanagement\MenuIntefrace\IMainMenuFunction.cs" />
     <Compile Include="uix\frames\capabilities\admin\AdminMainMenu.xaml.cs">
       <DependentUpon>AdminMainMenu.xaml</DependentUpon>
     </Compile>
@@ -302,6 +302,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="packages\uixmanagement\AdminManage\" />
+    <Folder Include="packages\uixmanagement\MenuIntefrace\" />
     <Folder Include="packages\uixmanagement\OperatorManage\" />
     <Folder Include="packages\uixmanagement\ShopmanManage\" />
   </ItemGroup>
@@ -316,6 +317,14 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="res\images\iconsOperator\motorcycleIcon.png" />
+    <Resource Include="res\images\iconsOperator\providerIcon.png" />
+    <Resource Include="res\images\iconsOperator\storeIcon.png" />
+    <Resource Include="res\images\iconsOperator\warehouseIcon.png" />
+    <Resource Include="res\images\icons\customer.png" />
+    <Resource Include="res\images\icons\addAccount.png" />
+    <Resource Include="res\images\icons\desktop.png" />
+    <Resource Include="res\images\icons\iconAccount.png" />
     <Resource Include="res\images\watermarks\loginholder.png" />
     <Resource Include="res\images\watermarks\passwordholder.png" />
     <Resource Include="res\images\icons\iconStore.png" />
